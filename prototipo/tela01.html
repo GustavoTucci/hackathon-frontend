@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#faf8ff", "secondary-fixed": "#ffdad6", "on-tertiary-fixed": "#002113", "on-surface-variant": "#5c403c", "inverse-primary": "#ffb4ab", "on-surface": "#131b2e", "on-secondary-container": "#690007", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#6ffbbe", "surface-container": "#eaedff", "primary-fixed-dim": "#ffb4ab", "error": "#ba1a1a", "primary-fixed": "#ffdad6", "on-background": "#131b2e", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "surface-tint": "#bf0715", "primary": "#b70011", "on-secondary-fixed-variant": "#8e1214", "on-primary-fixed-variant": "#93000b", "on-primary-fixed": "#410002", "primary-container": "#dc2626", "background": "#faf8ff", "on-primary-container": "#fff6f5", "surface-bright": "#faf8ff", "surface-variant": "#dae2fd", "surface-dim": "#d2d9f4", "on-primary": "#ffffff", "on-secondary-fixed": "#410002", "on-tertiary-container": "#e1ffec", "on-secondary": "#ffffff", "inverse-surface": "#283044", "tertiary-fixed-dim": "#4edea3", "outline": "#916f6b", "tertiary": "#006645", "secondary-container": "#ff665c", "inverse-on-surface": "#eef0ff", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb4ac", "surface-container-lowest": "#ffffff", "outline-variant": "#e6bdb8", "error-container": "#ffdad6", "secondary": "#b02d29", "on-tertiary-fixed-variant": "#005236", "tertiary-container": "#008259" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "metric-display": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-display": ["2.5rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-28 w-full max-w-[1440px] mx-auto px-margin flex flex-col justify-between py-space-xs">
+            <div class="flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-sm"><img alt="HemoVida Logo" class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" />
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-space-xs"><span
+                                class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">HemoVida</span><span
+                                class="px-space-xs py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">SUS
+                                Conectado • ODS 3</span></div><span
+                            class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Rede
+                            Inteligente de Hemocentros</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-error-container text-on-error-container">
+                        <span class="relative flex h-2.5 w-2.5"><span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span
+                                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span></span><span
+                            class="font-label-sm text-label-sm font-bold">SOS Sangue: O- e A- Críticos</span>
+                    </div><a
+                        class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-space-xs shadow-[0_2px_8px_rgba(220,38,38,0.25)]"
+                        data-path="agendar-doacao" href="#"><span
+                            class="material-symbols-outlined text-[16px]">add</span><span>+ Agendar Agora</span></a>
+                    <div class="flex items-center gap-space-xs pl-space-sm"><img alt="Profile"
+                            class="w-8 h-8 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcSXqX3UdnH3VnFZypxyrvrpChSddo1pywZMeLSRXixiU6XEJnmIL7FRta_hVT17YqnDXb8faG3RUox5TwxF6dBgcm_iAhNKXAriJnxwDx2Dtsv6M7OKqnjCeSy9Q0-3Tm_y1CEci6QCR9etBU2PR_1_h_usomRebezGBadA_SQPBPA6zfDO75t1IunyeuApCKcZ-E2TRAhBz1t1ZPBEScSFuG12uxkFV0s7d6G7jl" />
+                        <div class="hidden md:flex flex-col text-left"><span
+                                class="font-label-sm text-label-sm font-bold text-on-surface leading-tight">Gustavo
+                                T.</span><span
+                                class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">O-
+                                Doador Universal</span></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex items-center gap-space-xs overflow-x-auto pb-1"
+                data-active-classes="bg-surface-container text-primary font-bold rounded-lg"><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="home" href="#">Início</a><a aria-current="page"
+                    class="px-space-sm py-1 transition-colors whitespace-nowrap bg-surface-container text-primary font-bold rounded-lg"
+                    data-path="estoque-em-tempo-real" href="#">Estoque em Tempo Real</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="posso-doar" href="#">Posso Doar? (Triagem)</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="hemocentros" href="#">Hemocentros</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Doação</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="carteirinha-digital" href="#">Carteirinha Digital</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="conquistas" href="#">Conquistas</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="pedidos-urgentes" href="#">Pedidos Urgentes</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="guia-e-compatibilidade" href="#">Guia & Compatibilidade</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="admin-simulador" href="#">Admin / Simulador</a></nav>
+        </div>
+        <div class="w-full bg-error-container text-on-error-container py-1.5 px-margin">
+            <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-space-sm text-center md:text-left">
+                <div class="flex items-center gap-space-xs mx-auto md:mx-0"><span
+                        class="material-symbols-outlined text-[18px] text-primary animate-pulse">warning</span>
+                    <p class="font-label-sm text-label-sm"><span class="font-bold">Alerta Rede Hemominas & Grande
+                            SP:</span> Reservas de O- estão em 18% da capacidade ideal. Doadores O- e A-, agendem sua
+                        doação.</p>
+                </div><a
+                    class="hidden lg:inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary hover:underline whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Prioridade <span
+                        class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-28 bg-surface">
+        <div class="flex flex-col w-full">
+            <div class="max-w-[1440px] w-full mx-auto px-margin py-space-lg space-y-space-lg">
+                <!-- Top Diagnostic & Filter Bar -->
+                <div class="flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+                        <div>
+                            <div class="flex items-center gap-space-xs mb-1">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+                                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                    Alerta de Escassez Regional Ativo
+                                </span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Protocolo
+                                    SUS RNDS-2026</span>
+                            </div>
+                            <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Monitoramento
+                                de Estoques Sanguíneos em Tempo Real</h1>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Dados atualizados a cada 15
+                                minutos via barramento integrado do SUS e Hemocentros parceiros.</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-space-sm self-start lg:self-auto bg-surface-container-low px-space-md py-space-xs rounded-lg">
+                            <span class="material-symbols-outlined text-[20px] text-tertiary">sync</span>
+                            <div class="flex flex-col">
+                                <span class="font-label-sm text-label-sm font-bold text-on-surface">Última
+                                    sincronização: Há 4 minutos</span>
+                                <span class="font-label-sm text-label-sm text-tertiary font-medium">Barramento SUS •
+                                    Conexão Estável (Ping 32ms)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls & Interactive Filters Toolbar -->
+                    <div
+                        class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pt-space-xs border-none">
+                        <!-- Region Dropdown Selector -->
+                        <div class="flex flex-wrap items-center gap-space-sm">
+                            <label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1"
+                                for="location-select">
+                                <span class="material-symbols-outlined text-[18px] text-primary">pin_drop</span>
+                                Hemocentro:
+                            </label>
+                            <div class="relative min-w-[280px]">
+                                <select
+                                    class="w-full h-11 pl-space-md pr-10 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer shadow-sm"
+                                    id="location-select">
+                                    <option value="all">Todos os Hemocentros (Grande São Paulo)</option>
+                                    <option value="clinicas">Fundação Pró-Sangue Clínicas - SP</option>
+                                    <option value="unicamp">Hemocentro UNICAMP - Campinas</option>
+                                    <option value="taubate">Hemonúcleo Taubaté - Vale do Paraíba</option>
+                                    <option value="dante">Hospital Dante Pazzanese - SP</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined text-[20px] absolute right-3 top-3 pointer-events-none text-on-surface-variant">arrow_drop_down</span>
+                            </div>
+                        </div>
+                        <!-- Filter Chips with Counter -->
+                        <div class="flex flex-wrap items-center gap-space-xs" id="filter-container">
+                            <button
+                                class="filter-btn px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high"
+                                data-filter="all" type="button">
+                                Todos os Tipos <span class="ml-1 opacity-75 font-normal">(8)</span>
+                            </button>
+                            <button
+                                class="filter-btn active-filter px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-primary-container text-on-primary-container shadow-sm flex items-center gap-1.5"
+                                data-filter="critical" type="button">
+                                <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                                Apenas Críticos (<30%) <span
+                                    class="ml-1 px-1.5 py-0.2 rounded-full bg-white/20 font-bold text-xs">3</span>
+                            </button>
+                            <button
+                                class="filter-btn px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center gap-1.5"
+                                data-filter="warning" type="button">
+                                Em Alerta (30–59%) <span
+                                    class="ml-1 px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-900 font-bold text-xs">2</span>
+                            </button>
+                            <button
+                                class="filter-btn px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center gap-1.5"
+                                data-filter="stable" type="button">
+                                Estáveis (≥60%) <span
+                                    class="ml-1 px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-900 font-bold text-xs">3</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Analytical Summary Highlight Bar -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                    <!-- Total Reserve Bags -->
+                    <div
+                        class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">bloodtype</span>
+                        </div>
+                        <div>
+                            <span
+                                class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Estoque
+                                Global</span>
+                            <div class="flex items-baseline gap-1">
+                                <span
+                                    class="font-metric-display text-metric-display text-on-surface tabular-nums">405</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant font-medium">bolsas
+                                    ativas</span>
+                            </div>
+                            <span
+                                class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-0.5">
+                                <span class="material-symbols-outlined text-[14px]">trending_down</span> -8.4% esta
+                                semana
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Regional Coverage (Days) -->
+                    <div
+                        class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface flex-shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">event_repeat</span>
+                        </div>
+                        <div>
+                            <span
+                                class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Autonomia
+                                Regional</span>
+                            <div class="flex items-baseline gap-1">
+                                <span
+                                    class="font-metric-display text-metric-display text-on-surface tabular-nums">4.8</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant font-medium">dias
+                                    médios</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">Meta recomendada: 10.0
+                                dias</span>
+                        </div>
+                    </div>
+                    <!-- Critical Deficit Alert -->
+                    <div
+                        class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-error-container flex items-center justify-center text-on-error-container flex-shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">emergency</span>
+                        </div>
+                        <div>
+                            <span
+                                class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Déficit
+                                Mais Severo</span>
+                            <div class="flex items-baseline gap-1">
+                                <span
+                                    class="font-metric-display text-metric-display text-primary tabular-nums">O-</span>
+                                <span class="font-label-md text-label-md text-primary font-bold">(18% capacidade)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">14 bolsas •
+                                1.5 dias de cobertura</span>
+                        </div>
+                    </div>
+                    <!-- Live Donor Pacing Dispatch -->
+                    <div
+                        class="bg-tertiary-container/10 p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">volunteer_activism</span>
+                        </div>
+                        <div>
+                            <span
+                                class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider block">Doações
+                                Hoje (SP)</span>
+                            <div class="flex items-baseline gap-1">
+                                <span
+                                    class="font-metric-display text-metric-display text-tertiary tabular-nums">64</span>
+                                <span class="font-label-md text-label-md text-tertiary font-medium">coletas
+                                    efetivadas</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-tertiary font-medium">Meta diária: 120
+                                coletas</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Live 8 Blood Types Grid (4x2 on Desktop) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg" id="blood-grid">
+                    <!-- CARD 1: O- (CRITICAL) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-md transition-all hover:shadow-xl relative overflow-hidden ring-0"
+                        data-status="critical">
+                        <div
+                            class="absolute -top-12 -right-12 w-28 h-28 bg-primary/10 rounded-full blur-2xl pointer-events-none">
+                        </div>
+                        <div>
+                            <!-- Header info -->
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-primary leading-none">O-</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1 animate-pulse">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Crítico • 18%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Doador
+                                        Universal</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">Rh-</span>
+                            </div>
+                            <!-- Medical Graduated Chamber Fluid Indicator -->
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <!-- Simulated Vertical Medical Bag Tank -->
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <!-- Graduated Markings (Ticks) -->
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <!-- Fluid Body (18%) -->
+                                    <div class="w-full bg-gradient-to-t from-primary via-primary-container to-secondary-container transition-all duration-700 relative z-10"
+                                        style="height: 18%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <!-- Quantitative Telemetry -->
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span class="font-label-lg text-label-lg text-primary font-bold tabular-nums">14
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">9
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-primary font-bold tabular-nums">1.5
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-primary h-1.5 rounded-full" style="width: 18%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Action CTA -->
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md text-center hover:bg-primary transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                            data-path="agendar-doacao" href="#">
+                            <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            <span>Doar Agora O-</span>
+                        </a>
+                    </div>
+                    <!-- CARD 2: A- (CRITICAL) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-md transition-all hover:shadow-xl relative overflow-hidden ring-0"
+                        data-status="critical">
+                        <div
+                            class="absolute -top-12 -right-12 w-28 h-28 bg-primary/10 rounded-full blur-2xl pointer-events-none">
+                        </div>
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-primary leading-none">A-</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1 animate-pulse">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Crítico • 22%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Receptor
+                                        A-, O-</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">Rh-</span>
+                            </div>
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <div class="w-full bg-gradient-to-t from-primary via-primary-container to-secondary-container transition-all duration-700 relative z-10"
+                                        style="height: 22%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span class="font-label-lg text-label-lg text-primary font-bold tabular-nums">19
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">9.5
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-primary font-bold tabular-nums">2.0
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-primary h-1.5 rounded-full" style="width: 22%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md text-center hover:bg-primary transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                            data-path="agendar-doacao" href="#">
+                            <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            <span>Doar Agora A-</span>
+                        </a>
+                    </div>
+                    <!-- CARD 3: B- (CRITICAL) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-md transition-all hover:shadow-xl relative overflow-hidden"
+                        data-status="critical">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-primary leading-none">B-</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Crítico • 27%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Receptor
+                                        B-, O-</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">Rh-</span>
+                            </div>
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <div class="w-full bg-gradient-to-t from-primary via-primary-container to-secondary-container transition-all duration-700 relative z-10"
+                                        style="height: 27%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span class="font-label-lg text-label-lg text-primary font-bold tabular-nums">11
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">4.4
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-primary font-bold tabular-nums">2.5
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-primary h-1.5 rounded-full" style="width: 27%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md text-center hover:bg-primary transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                            data-path="agendar-doacao" href="#">
+                            <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            <span>Doar Agora B-</span>
+                        </a>
+                    </div>
+                    <!-- CARD 4: O+ (WARNING) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm transition-all hover:shadow-md"
+                        data-status="warning">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-on-surface leading-none">O+</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-bold flex items-center gap-1">
+                                            Alerta • 42%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Doador
+                                        para O+, A+, B+, AB+</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold">Rh+</span>
+                            </div>
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <div class="w-full bg-gradient-to-t from-amber-600 to-amber-400 transition-all duration-700 relative z-10"
+                                        style="height: 42%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span
+                                            class="font-label-lg text-label-lg text-on-surface font-bold tabular-nums">68
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">17
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-amber-900 font-bold tabular-nums">4.0
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-amber-500 h-1.5 rounded-full" style="width: 42%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5"
+                            data-path="agendar-doacao" href="#">
+                            <span>Agendar Doação O+</span>
+                        </a>
+                    </div>
+                    <!-- CARD 5: A+ (WARNING) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm transition-all hover:shadow-md"
+                        data-status="warning">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-on-surface leading-none">A+</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-bold flex items-center gap-1">
+                                            Alerta • 49%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Doador
+                                        para A+, AB+</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold">Rh+</span>
+                            </div>
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <div class="w-full bg-gradient-to-t from-amber-600 to-amber-400 transition-all duration-700 relative z-10"
+                                        style="height: 49%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span
+                                            class="font-label-lg text-label-lg text-on-surface font-bold tabular-nums">84
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">16.8
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-amber-900 font-bold tabular-nums">5.0
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-amber-500 h-1.5 rounded-full" style="width: 49%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5"
+                            data-path="agendar-doacao" href="#">
+                            <span>Agendar Doação A+</span>
+                        </a>
+                    </div>
+                    <!-- CARD 6: B+ (STABLE) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm transition-all hover:shadow-md"
+                        data-status="stable">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-on-surface leading-none">B+</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold flex items-center gap-1">
+                                            Adequado • 74%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Doador
+                                        para B+, AB+</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold">Rh+</span>
+                            </div>
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <div class="w-full bg-gradient-to-t from-emerald-600 to-emerald-400 transition-all duration-700 relative z-10"
+                                        style="height: 74%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span
+                                            class="font-label-lg text-label-lg text-on-surface font-bold tabular-nums">112
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">12.4
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-emerald-800 font-bold tabular-nums">9.0
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-emerald-600 h-1.5 rounded-full" style="width: 74%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5"
+                            data-path="agendar-doacao" href="#">
+                            <span>Agendar Doação B+</span>
+                        </a>
+                    </div>
+                    <!-- CARD 7: AB+ (STABLE) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm transition-all hover:shadow-md"
+                        data-status="stable">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-on-surface leading-none">AB+</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold flex items-center gap-1">
+                                            Adequado • 88%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Receptor
+                                        Universal</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold">Rh+</span>
+                            </div>
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <div class="w-full bg-gradient-to-t from-emerald-600 to-emerald-400 transition-all duration-700 relative z-10"
+                                        style="height: 88%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span
+                                            class="font-label-lg text-label-lg text-on-surface font-bold tabular-nums">65
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">5.4
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-emerald-800 font-bold tabular-nums">12.0
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-emerald-600 h-1.5 rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5"
+                            data-path="agendar-doacao" href="#">
+                            <span>Agendar Doação AB+</span>
+                        </a>
+                    </div>
+                    <!-- CARD 8: AB- (STABLE) -->
+                    <div class="blood-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm transition-all hover:shadow-md"
+                        data-status="stable">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-space-md">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="font-metric-display text-metric-display font-extrabold text-on-surface leading-none">AB-</span>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold flex items-center gap-1">
+                                            Adequado • 65%
+                                        </span>
+                                    </div>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1 block">Doador
+                                        de Plasma Universal</span>
+                                </div>
+                                <span
+                                    class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold">Rh-</span>
+                            </div>
+                            <div
+                                class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md flex items-center gap-space-md">
+                                <div
+                                    class="relative w-14 h-36 bg-surface-container-high rounded-lg overflow-hidden flex flex-col justify-end shadow-inner flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 px-1 z-20 opacity-40">
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">450ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">300ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">150ml -</span>
+                                        <span class="font-label-sm text-[8px] text-on-surface font-mono">50ml -</span>
+                                    </div>
+                                    <div class="w-full bg-gradient-to-t from-emerald-600 to-emerald-400 transition-all duration-700 relative z-10"
+                                        style="height: 65%;">
+                                        <div class="absolute inset-x-0 top-0 h-1.5 bg-white/40"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 flex-grow">
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Em
+                                            Estoque:</span>
+                                        <span
+                                            class="font-label-lg text-label-lg text-on-surface font-bold tabular-nums">32
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Consumo/dia:</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface tabular-nums">4.0
+                                            bolsas</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant">Autonomia:</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-emerald-800 font-bold tabular-nums">8.0
+                                            dias</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+                                        <div class="bg-emerald-600 h-1.5 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="w-full py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface font-label-md text-label-md text-center hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5"
+                            data-path="agendar-doacao" href="#">
+                            <span>Agendar Doação AB-</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Clinical Dispatch Protocols & Visual Insight Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+                    <!-- Phlebotomy & Center Photo Story -->
+                    <div
+                        class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A clean, modern hematology laboratory room with clinical staff in medical scrubs carefully inspecting blood bags, sterile environment, soft ambient medical lighting, professional healthcare technology atmosphere"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyxbtBCHE_PkopFRokpj7vlh_uQjkC6FcAqHGS2Inxq8mYvch7Q_ZU5QJ6GR5wb9bLW3qh19xL_OI6ILW59KOwcjUAIsBevprQtUgsjJGAfjKMKuFxXL_BZp08c8EV7aAFC0_Y-NYG1dyl39ZBeg-h-ANFfU94PpTEP4cQiC9a11Vn3vJFiaXD_iZJTfQkMF8v_kattg1s8UxM89vIaq0FWsNDWi7ykRHLJAqWtzmc" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent">
+                            </div>
+                            <span
+                                class="absolute top-3 left-3 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm font-semibold">
+                                Laboratório Central Clínicas
+                            </span>
+                        </div>
+                        <div class="p-space-lg pt-0">
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Cadeia de Fracionamento
+                                24h</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Cada bolsa coletada é separada em hemácias, plaquetas e plasma fresco congelado no prazo
+                                máximo de 6 horas, garantindo até 4 vidas beneficiadas por doação.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Hemocenter Interactive Recommendation & Logistics Advisory -->
+                    <div
+                        class="lg:col-span-2 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-space-xs">
+                                <span class="material-symbols-outlined text-primary text-[24px]">crisis_alert</span>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Diretrizes de Resposta a
+                                    Emergências (Protocolo Nível 2)</h3>
+                            </div>
+                            <span
+                                class="font-label-sm text-label-sm bg-surface-container px-space-xs py-1 rounded text-on-surface-variant font-mono">
+                                RNDS-ID: #8829-SP
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                            <div class="bg-surface-container-low p-space-md rounded-xl space-y-1">
+                                <div
+                                    class="flex items-center gap-1.5 text-primary font-label-md text-label-md font-bold">
+                                    <span class="material-symbols-outlined text-[16px]">priority_high</span>
+                                    Prioridade Imediata: Rh Negativo
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Pacientes cirúrgicos de trauma no Pronto-Socorro do HC estão demandando suporte de
+                                    O- e A-. Doadores cadastrados com estes tipos receberam notificação SOS no app.
+                                </p>
+                            </div>
+                            <div class="bg-surface-container-low p-space-md rounded-xl space-y-1">
+                                <div
+                                    class="flex items-center gap-1.5 text-tertiary font-label-md text-label-md font-bold">
+                                    <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                    Plaquetas e Plasma Estáveis
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Os estoques de concentrado de plaquetas mantêm cobertura de 4 dias. Doações de
+                                    aférese continuam com agendamento normal nos postos de triagem.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Inline Visual Comparison Bar Chart (Mini SVG telemetry) -->
+                        <div class="pt-space-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span
+                                    class="font-label-sm text-label-sm text-on-surface-variant font-medium">Distribuição
+                                    Percentual de Capacidade por Tipo Sanguíneo</span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">Capacidade Operacional
+                                    Ideal = 100%</span>
+                            </div>
+                            <div class="w-full bg-surface-container rounded-lg p-space-sm">
+                                <svg class="w-full h-12" fill="none" viewbox="0 0 800 48"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Grid Baseline -->
+                                    <line stroke="#e2e7ff" stroke-width="2" x1="0" x2="800" y1="44" y2="44"></line>
+                                    <!-- Safe line at 60% (height 18 from bottom -> y=20) -->
+                                    <line stroke="#dae2fd" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800"
+                                        y1="20" y2="20"></line>
+                                    <!-- Bars (8 types: x step 100) -->
+                                    <!-- O- (18% -> h: 7px) -->
+                                    <rect fill="#b70011" height="7" rx="3" width="40" x="25" y="37"></rect>
+                                    <text fill="#b70011" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="45" y="34">18%</text>
+                                    <!-- A- (22% -> h: 9px) -->
+                                    <rect fill="#b70011" height="9" rx="3" width="40" x="125" y="35"></rect>
+                                    <text fill="#b70011" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="145" y="32">22%</text>
+                                    <!-- B- (27% -> h: 11px) -->
+                                    <rect fill="#b70011" height="11" rx="3" width="40" x="225" y="33"></rect>
+                                    <text fill="#b70011" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="245" y="30">27%</text>
+                                    <!-- O+ (42% -> h: 17px) -->
+                                    <rect fill="#d97706" height="17" rx="3" width="40" x="325" y="27"></rect>
+                                    <text fill="#d97706" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="345" y="24">42%</text>
+                                    <!-- A+ (49% -> h: 20px) -->
+                                    <rect fill="#d97706" height="20" rx="3" width="40" x="425" y="24"></rect>
+                                    <text fill="#d97706" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="445" y="21">49%</text>
+                                    <!-- B+ (74% -> h: 30px) -->
+                                    <rect fill="#006645" height="30" rx="3" width="40" x="525" y="14"></rect>
+                                    <text fill="#006645" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="545" y="11">74%</text>
+                                    <!-- AB+ (88% -> h: 36px) -->
+                                    <rect fill="#006645" height="36" rx="3" width="40" x="625" y="8"></rect>
+                                    <text fill="#006645" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="645" y="5">88%</text>
+                                    <!-- AB- (65% -> h: 26px) -->
+                                    <rect fill="#006645" height="26" rx="3" width="40" x="725" y="18"></rect>
+                                    <text fill="#006645" font-family="Inter" font-size="9" font-weight="bold"
+                                        text-anchor="middle" x="745" y="15">65%</text>
+                                </svg>
+                                <div
+                                    class="flex justify-between px-3 text-[11px] font-bold text-on-surface-variant font-mono">
+                                    <span>O-</span><span>A-</span><span>B-</span><span>O+</span><span>A+</span><span>B+</span><span>AB+</span><span>AB-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">Crítico (<30%)< /span>
+                                        <span class="w-3 h-3 rounded-full bg-amber-500 inline-block ml-2"></span>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Alerta
+                                            (30-59%)</span>
+                                        <span class="w-3 h-3 rounded-full bg-emerald-600 inline-block ml-2"></span>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Adequado
+                                            (≥60%)</span>
+                            </div>
+                            <a class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-primary hover:underline"
+                                data-path="hemocentros" href="#">
+                                Ver Rede de 42 Hemocentros <span
+                                    class="material-symbols-outlined text-[16px]">chevron_right</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function initDashboardInteractivity() {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const bloodCards = document.querySelectorAll('.blood-card');
+
+                filterButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const selectedFilter = btn.getAttribute('data-filter');
+
+                        // Reset state
+                        filterButtons.forEach(b => {
+                            b.classList.remove('active-filter', 'bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+                            b.classList.add('bg-surface-container', 'text-on-surface');
+                        });
+
+                        // Set active styling
+                        btn.classList.remove('bg-surface-container', 'text-on-surface');
+                        btn.classList.add('active-filter', 'bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+
+                        // Filter cards
+                        bloodCards.forEach(card => {
+                            const cardStatus = card.getAttribute('data-status');
+                            if (selectedFilter === 'all' || cardStatus === selectedFilter) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+
+                // Default trigger for Critical as indicated in specification
+                const criticalButton = document.querySelector('[data-filter="critical"]');
+                if (criticalButton && criticalButton.classList.contains('active-filter')) {
+                    bloodCards.forEach(card => {
+                        if (card.getAttribute('data-status') !== 'critical') {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                // Location selector interactive visual feedback
+                const locationSelect = document.getElementById('location-select');
+                if (locationSelect) {
+                    locationSelect.addEventListener('change', (e) => {
+                        const text = e.target.options[e.target.selectedIndex].text;
+                        const bannerSync = document.querySelector('.text-tertiary.font-medium');
+                        if (bannerSync) {
+                            bannerSync.textContent = 'Barramento SUS • Sincronizado para ' + text;
+                        }
+                    });
+                }
+            })();
+        </script>
+    </main>
+    <footer
+        class="w-full bg-surface-container-low text-on-surface-variant mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1440px] mx-auto px-margin py-space-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="space-y-space-sm">
+                <div class="flex items-center gap-space-xs"><img alt="HemoVida Logo" class="h-7 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" /><span
+                        class="font-headline-sm text-headline-sm text-primary font-bold">HemoVida</span></div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Rede inteligente de suporte à doação de
+                    sangue e gestão integrada de hemocentros clínicos, orientada pelo ODS 3 da ONU (Saúde e Bem-Estar -
+                    Metas 3.8 e 3.d).</p>
+                <div class="flex items-center gap-space-xs pt-space-xs"><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">ODS
+                        3 • Saúde</span><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">SUS
+                        Integrado</span></div>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Links Rápidos & Diretrizes</h4>
+                <ul class="space-y-space-xs font-body-sm text-body-sm">
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="posso-doar" href="#">Critérios de
+                            Doação de Sangue</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="guia-e-compatibilidade"
+                            href="#">Dúvidas Frequentes & Compatibilidade</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="hemocentros" href="#">Hospitais &
+                            Hemocentros Parceiros</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="admin-simulador" href="#">API
+                            Hemocentros & Integração RNDS</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" href="#">Privacidade de Dados & LGPD em
+                            Saúde</a></li>
+                </ul>
+            </div>
+            <div class="space-y-space-sm">
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Canais de Emergência & Apoio</h4>
+                <div
+                    class="p-space-sm rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.03)] space-y-space-xs">
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Disque Doação SUS</span><span
+                            class="font-headline-sm text-headline-sm font-bold text-primary">136</span></div>
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Central 24h</span><span
+                            class="font-label-md text-label-md font-bold text-on-surface">0800 700 VIDA</span></div>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container text-on-surface">
+                    <div class="flex items-center gap-space-xs"><span
+                            class="material-symbols-outlined text-tertiary">verified</span><span
+                            class="font-label-sm text-label-sm font-bold">Hackathon Evaluation Edition</span></div>
+                    <p class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Plataforma validada para
+                        auditoria operacional de estoques vitais e resposta rápida.</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-margin py-space-sm border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-xs text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 HemoVida. Desenvolvido para salvar
+                vidas com tecnologia humanizada.</p>
+            <div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span
+                    class="flex items-center gap-1"><span
+                        class="material-symbols-outlined text-[14px] text-tertiary">health_and_safety</span>
+                    Conformidade ANVISA RDC 34/2014</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>
