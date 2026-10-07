@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#faf8ff", "secondary-fixed": "#ffdad6", "on-tertiary-fixed": "#002113", "on-surface-variant": "#5c403c", "inverse-primary": "#ffb4ab", "on-surface": "#131b2e", "on-secondary-container": "#690007", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#6ffbbe", "surface-container": "#eaedff", "primary-fixed-dim": "#ffb4ab", "error": "#ba1a1a", "primary-fixed": "#ffdad6", "on-background": "#131b2e", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "surface-tint": "#bf0715", "primary": "#b70011", "on-secondary-fixed-variant": "#8e1214", "on-primary-fixed-variant": "#93000b", "on-primary-fixed": "#410002", "primary-container": "#dc2626", "background": "#faf8ff", "on-primary-container": "#fff6f5", "surface-bright": "#faf8ff", "surface-variant": "#dae2fd", "surface-dim": "#d2d9f4", "on-primary": "#ffffff", "on-secondary-fixed": "#410002", "on-tertiary-container": "#e1ffec", "on-secondary": "#ffffff", "inverse-surface": "#283044", "tertiary-fixed-dim": "#4edea3", "outline": "#916f6b", "tertiary": "#006645", "secondary-container": "#ff665c", "inverse-on-surface": "#eef0ff", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb4ac", "surface-container-lowest": "#ffffff", "outline-variant": "#e6bdb8", "error-container": "#ffdad6", "secondary": "#b02d29", "on-tertiary-fixed-variant": "#005236", "tertiary-container": "#008259" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "metric-display": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-display": ["2.5rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-28 w-full max-w-[1440px] mx-auto px-margin flex flex-col justify-between py-space-xs">
+            <div class="flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-sm"><img alt="HemoVida Logo" class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" />
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-space-xs"><span
+                                class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">HemoVida</span><span
+                                class="px-space-xs py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">SUS
+                                Conectado • ODS 3</span></div><span
+                            class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Rede
+                            Inteligente de Hemocentros</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-error-container text-on-error-container">
+                        <span class="relative flex h-2.5 w-2.5"><span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span
+                                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span></span><span
+                            class="font-label-sm text-label-sm font-bold">SOS Sangue: O- e A- Críticos</span>
+                    </div><a
+                        class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-space-xs shadow-[0_2px_8px_rgba(220,38,38,0.25)]"
+                        data-path="agendar-doacao" href="#"><span
+                            class="material-symbols-outlined text-[16px]">add</span><span>+ Agendar Agora</span></a>
+                    <div class="flex items-center gap-space-xs pl-space-sm"><img alt="Profile"
+                            class="w-8 h-8 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcSXqX3UdnH3VnFZypxyrvrpChSddo1pywZMeLSRXixiU6XEJnmIL7FRta_hVT17YqnDXb8faG3RUox5TwxF6dBgcm_iAhNKXAriJnxwDx2Dtsv6M7OKqnjCeSy9Q0-3Tm_y1CEci6QCR9etBU2PR_1_h_usomRebezGBadA_SQPBPA6zfDO75t1IunyeuApCKcZ-E2TRAhBz1t1ZPBEScSFuG12uxkFV0s7d6G7jl" />
+                        <div class="hidden md:flex flex-col text-left"><span
+                                class="font-label-sm text-label-sm font-bold text-on-surface leading-tight">Gustavo
+                                T.</span><span
+                                class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">O-
+                                Doador Universal</span></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex items-center gap-space-xs overflow-x-auto pb-1"
+                data-active-classes="bg-surface-container text-primary font-bold rounded-lg"><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="home" href="#">Início</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="estoque-em-tempo-real" href="#">Estoque em Tempo Real</a><a aria-current="page"
+                    class="px-space-sm py-1 transition-colors whitespace-nowrap bg-surface-container text-primary font-bold rounded-lg"
+                    data-path="posso-doar" href="#">Posso Doar? (Triagem)</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="hemocentros" href="#">Hemocentros</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Doação</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="carteirinha-digital" href="#">Carteirinha Digital</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="conquistas" href="#">Conquistas</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="pedidos-urgentes" href="#">Pedidos Urgentes</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="guia-e-compatibilidade" href="#">Guia & Compatibilidade</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="admin-simulador" href="#">Admin / Simulador</a></nav>
+        </div>
+        <div class="w-full bg-error-container text-on-error-container py-1.5 px-margin">
+            <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-space-sm text-center md:text-left">
+                <div class="flex items-center gap-space-xs mx-auto md:mx-0"><span
+                        class="material-symbols-outlined text-[18px] text-primary animate-pulse">warning</span>
+                    <p class="font-label-sm text-label-sm"><span class="font-bold">Alerta Rede Hemominas & Grande
+                            SP:</span> Reservas de O- estão em 18% da capacidade ideal. Doadores O- e A-, agendem sua
+                        doação.</p>
+                </div><a
+                    class="hidden lg:inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary hover:underline whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Prioridade <span
+                        class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-28 bg-surface">
+        <div class="flex flex-col w-full">
+            <div class="max-w-4xl mx-auto py-8 px-6 space-y-8 w-full">
+                <!-- 1. Wizard Header & Progress Bar -->
+                <header class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+                        <div class="space-y-1">
+                            <div
+                                class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+                                <span class="material-symbols-outlined text-[16px]">verified_user</span>
+                                <span class="font-label-sm text-label-sm uppercase tracking-wider">Protocolo Técnico
+                                    ANVISA RDC 34/2014</span>
+                            </div>
+                            <h1 class="font-headline-md text-headline-md text-on-surface">Autoavaliação Rápida de
+                                Aptidão para Doação</h1>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Responda a 6 perguntas
+                                fundamentais baseadas nos protocolos técnicos da ANVISA e Ministério da Saúde.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container px-space-md py-space-xs rounded-lg self-start md:self-auto flex items-center gap-space-xs text-primary font-bold">
+                            <span class="material-symbols-outlined text-[20px]">timer</span>
+                            <span class="font-label-md text-label-md">Tempo médio: 90s</span>
+                        </div>
+                    </div>
+                    <!-- Stepper / Progress Bar -->
+                    <div class="pt-space-xs space-y-space-xs">
+                        <div class="flex items-center justify-between font-label-sm text-label-sm">
+                            <span class="font-bold text-primary flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                                Etapa 3 de 6 (50% concluído)
+                            </span>
+                            <span class="text-on-surface-variant">Critério Ativo: Descanso & Vigília</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+                            <div class="h-full bg-primary-container rounded-full transition-all duration-500 w-1/2">
+                            </div>
+                        </div>
+                        <!-- Step Dots Labels Grid -->
+                        <div class="grid grid-cols-6 gap-2 pt-2">
+                            <div class="flex flex-col items-center text-center">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-sm text-[11px] mb-1">
+                                    <span class="material-symbols-outlined text-[14px]">check</span>
+                                </span>
+                                <span class="font-label-sm text-[10px] text-tertiary font-bold">1. Idade</span>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-sm text-[11px] mb-1">
+                                    <span class="material-symbols-outlined text-[14px]">check</span>
+                                </span>
+                                <span class="font-label-sm text-[10px] text-tertiary font-bold">2. Peso</span>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-[11px] mb-1 ring-4 ring-primary/20">3</span>
+                                <span class="font-label-sm text-[10px] text-primary font-bold">3. Sono</span>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-sm text-[11px] mb-1">4</span>
+                                <span class="font-label-sm text-[10px] text-on-surface-variant">4. Dieta</span>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-sm text-[11px] mb-1">5</span>
+                                <span class="font-label-sm text-[10px] text-on-surface-variant">5. Exames</span>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-sm text-[11px] mb-1">6</span>
+                                <span class="font-label-sm text-[10px] text-on-surface-variant">6. Saúde</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- 2. Active Question Container -->
+                <section class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md space-y-space-md">
+                    <div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+                        <span
+                            class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+                            <span class="material-symbols-outlined text-[16px]">bedtime</span>
+                            Critério #3: Descanso e Recuperação
+                        </span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+                            Idade (24 anos) & Peso (68kg) já validados
+                        </span>
+                    </div>
+                    <div class="space-y-space-xs">
+                        <h2 class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+                            Você dormiu pelo menos 6 horas nas últimas 24 horas?
+                        </h2>
+                        <div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-space-sm">
+                            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">info</span>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                <strong class="text-on-surface">Por que isso importa:</strong> O descanso adequado
+                                previne episódios de hipotensão postural ou tontura durante e logo após a coleta de
+                                sangue total (450ml). Seu bem-estar é prioridade absoluta no ciclo transfusional.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Yes/No Visual Toggle Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+                        <!-- Selected YES Button (Emerald Active State) -->
+                        <button
+                            class="group text-left p-space-md rounded-xl bg-tertiary/10 shadow-sm flex items-start justify-between gap-space-sm cursor-pointer transition-all"
+                            type="button">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-label-lg text-label-lg text-tertiary">SIM, dormi 6 horas ou
+                                        mais</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Noite de sono reparadora. Corpo pronto para a doação sem sobrecarga circulatória.
+                                </p>
+                            </div>
+                            <div
+                                class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[18px]">check</span>
+                            </div>
+                        </button>
+                        <!-- NO Button (Inactive State with subtle hover feedback) -->
+                        <button
+                            class="group text-left p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high shadow-none flex items-start justify-between gap-space-sm cursor-pointer transition-all"
+                            type="button">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-label-lg text-label-lg text-on-surface">NÃO, dormi menos de 6
+                                        horas</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Privação de sono recente. Pode ser recomendada uma pausa para recuperação antes da
+                                    punção.
+                                </p>
+                            </div>
+                            <div
+                                class="w-7 h-7 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 group-hover:text-primary">
+                                <span class="material-symbols-outlined text-[18px]">close</span>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Question Navigation Controls -->
+                    <div class="pt-space-md flex items-center justify-between">
+                        <button
+                            class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-space-xs cursor-pointer"
+                            type="button">
+                            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                            <span>Pergunta Anterior</span>
+                        </button>
+                        <div class="flex items-center gap-space-sm">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Resposta
+                                salva automaticamente</span>
+                            <button
+                                class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-label-md text-label-md flex items-center gap-space-xs shadow-md cursor-pointer"
+                                type="button">
+                                <span>Próxima Pergunta</span>
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- 3. Complete List of All 6 Evaluated Criteria (Collapsible Summary Overview) -->
+                <section class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+                        <div>
+                            <h2 class="font-label-lg text-label-lg text-on-surface flex items-center gap-space-xs">
+                                <span class="material-symbols-outlined text-primary text-[20px]">checklist</span>
+                                Critérios Oficiais Avaliados na Triagem Digital
+                            </h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Base regulatória do Ministério
+                                da Saúde e Hemorrede Nacional</p>
+                        </div>
+                        <span
+                            class="font-label-sm text-label-sm px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-semibold self-start sm:self-auto">
+                            6 Parâmetros Vitais
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pt-space-xs">
+                        <!-- Criteria 1 -->
+                        <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+                            <div
+                                class="w-8 h-8 rounded-full bg-tertiary/15 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="font-label-sm text-[12px] font-bold">01</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Faixa
+                                        Etária</span>
+                                    <span
+                                        class="font-label-sm text-[10px] text-tertiary font-bold bg-tertiary/10 px-1.5 py-0.2 rounded">Apto</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    16 a 69 anos (com consentimento formal dos pais/responsáveis para 16-17; primeira
+                                    doação até 60 anos incompletos).
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Criteria 2 -->
+                        <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+                            <div
+                                class="w-8 h-8 rounded-full bg-tertiary/15 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="font-label-sm text-[12px] font-bold">02</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Massa
+                                        Corporal</span>
+                                    <span
+                                        class="font-label-sm text-[10px] text-tertiary font-bold bg-tertiary/10 px-1.5 py-0.2 rounded">Apto</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Superior a 50 kg em balança médica aferida para cálculo seguro da volemia a ser
+                                    colhida.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Criteria 3 -->
+                        <div class="p-space-sm rounded-lg bg-surface-container-high flex items-start gap-space-sm">
+                            <div
+                                class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="font-label-sm text-[12px] font-bold">03</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="font-label-md text-label-md text-primary font-bold">Sono &
+                                        Repouso</span>
+                                    <span
+                                        class="font-label-sm text-[10px] text-primary font-bold bg-primary-fixed px-1.5 py-0.2 rounded">Em
+                                        análise</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface">
+                                    Pelo menos 6 horas contínuas de descanso repousante na noite anterior à coleta.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Criteria 4 -->
+                        <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="font-label-sm text-[12px] font-bold">04</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Alimentação
+                                        Prévia</span>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant bg-surface-container px-1.5 py-0.2 rounded">Próximo</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Refeição leve nas últimas 3 horas, sem ingestão de gordura excessiva e sem jejum
+                                    prolongado.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Criteria 5 -->
+                        <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="font-label-sm text-[12px] font-bold">05</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Procedimentos
+                                        Recentes</span>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant bg-surface-container px-1.5 py-0.2 rounded">Pendente</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Tatuagem, micropigmentação, piercing ou procedimentos invasivos nos últimos 12
+                                    meses.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Criteria 6 -->
+                        <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+                            <div
+                                class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="font-label-sm text-[12px] font-bold">06</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="font-label-md text-label-md text-on-surface font-bold">Sintomas & Saúde
+                                        Geral</span>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant bg-surface-container px-1.5 py-0.2 rounded">Pendente</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Ausência de febre, gripe, resfriado ou infecções clínicas ativas nas últimas 2
+                                    semanas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 4. Instant Results Preview States (Visual Comparison Showcase) -->
+                <div class="space-y-space-md">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="font-label-lg text-label-lg text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-[20px]">preview</span>
+                                Simulação de Desfecho da Triagem
+                            </h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Veja como o sistema sinaliza
+                                seu status ao concluir a avaliação:</p>
+                        </div>
+                        <span
+                            class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-sm py-1 rounded">2
+                            Cenários Possíveis</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                        <!-- State A: APTO (Celebration Emerald Card) -->
+                        <div
+                            class="p-space-lg rounded-xl bg-tertiary/10 text-on-surface space-y-space-md flex flex-col justify-between shadow-sm">
+                            <div class="space-y-space-sm">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm font-bold uppercase">
+                                        Cenário Positivo
+                                    </span>
+                                    <span class="material-symbols-outlined text-tertiary text-[24px]">verified</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-headline-sm text-headline-sm text-tertiary font-bold">
+                                        Parabéns! Você está APTO para doar sangue!
+                                    </h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Seu perfil atende a todos os critérios preliminares do Ministério da Saúde. O
+                                        processo no hemocentro levará apenas cerca de 40 minutos.
+                                    </p>
+                                </div>
+                                <div
+                                    class="p-space-sm rounded-lg bg-surface-container-lowest text-on-surface space-y-1">
+                                    <div class="flex items-center justify-between font-label-sm text-label-sm">
+                                        <span class="text-on-surface-variant">Volume estimado:</span>
+                                        <span class="font-bold">450 ml (padrão bolsa SUS)</span>
+                                    </div>
+                                    <div class="flex items-center justify-between font-label-sm text-label-sm">
+                                        <span class="text-on-surface-variant">Vidas beneficiadas:</span>
+                                        <span class="font-bold text-tertiary">Até 4 pacientes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-space-xs">
+                                <a class="w-full py-space-xs px-space-md rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-label-md text-label-md flex items-center justify-center gap-space-xs shadow-md"
+                                    data-path="agendar-doacao" href="#">
+                                    <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                                    <span>Agendar Doação Imediata</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- State B: INAPTO TEMPORÁRIO (Amber Awareness Card) -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-high text-on-surface space-y-space-md flex flex-col justify-between shadow-sm">
+                            <div class="space-y-space-sm">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="px-space-sm py-0.5 rounded-full bg-on-secondary-fixed-variant text-surface-container-lowest font-label-sm text-label-sm font-bold uppercase">
+                                        Atenção Preventiva
+                                    </span>
+                                    <span
+                                        class="material-symbols-outlined text-secondary text-[24px]">hourglass_top</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-headline-sm text-headline-sm text-secondary font-bold">
+                                        Inaptidão Temporária Detectada
+                                    </h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Identificamos uma condição que exige breve janela de segurança biológica para
+                                        preservar a sua imunidade e a do receptor.
+                                    </p>
+                                </div>
+                                <div class="p-space-sm rounded-lg bg-surface-container-lowest space-y-2">
+                                    <div class="flex items-center gap-space-xs text-on-surface">
+                                        <span
+                                            class="material-symbols-outlined text-secondary text-[18px]">event_repeat</span>
+                                        <span class="font-label-md text-label-md font-bold">Você poderá doar a partir
+                                            de:</span>
+                                    </div>
+                                    <p class="font-headline-sm text-headline-sm text-primary font-bold">
+                                        18 de Abril de 2026
+                                    </p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Motivo: Período de janela imunológica pós-procedimento cutâneo recente.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="pt-space-xs">
+                                <button
+                                    class="w-full py-space-xs px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md flex items-center justify-center gap-space-xs shadow-sm cursor-pointer"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">notifications_active</span>
+                                    <span>Ativar Alerta para esta Data</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional Clinical Footnote / FAQ Callout -->
+                <div
+                    class="p-space-md rounded-xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md">
+                    <div class="flex items-center gap-space-sm">
+                        <span class="material-symbols-outlined text-primary text-[28px] shrink-0">help_outline</span>
+                        <div>
+                            <p class="font-label-md text-label-md text-on-surface font-bold">Dúvida sobre remédios
+                                controlados ou vacinas?</p>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Consulte a tabela completa de
+                                prazos de impedimento com mais de 120 substâncias catalogadas.</p>
+                        </div>
+                    </div>
+                    <a class="shrink-0 px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-primary hover:bg-primary-fixed transition-colors font-label-md text-label-md font-bold"
+                        data-path="guia-e-compatibilidade" href="#">
+                        Abrir Guia Farmacológico
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer
+        class="w-full bg-surface-container-low text-on-surface-variant mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1440px] mx-auto px-margin py-space-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="space-y-space-sm">
+                <div class="flex items-center gap-space-xs"><img alt="HemoVida Logo" class="h-7 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" /><span
+                        class="font-headline-sm text-headline-sm text-primary font-bold">HemoVida</span></div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Rede inteligente de suporte à doação de
+                    sangue e gestão integrada de hemocentros clínicos, orientada pelo ODS 3 da ONU (Saúde e Bem-Estar -
+                    Metas 3.8 e 3.d).</p>
+                <div class="flex items-center gap-space-xs pt-space-xs"><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">ODS
+                        3 • Saúde</span><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">SUS
+                        Integrado</span></div>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Links Rápidos & Diretrizes</h4>
+                <ul class="space-y-space-xs font-body-sm text-body-sm">
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="posso-doar" href="#">Critérios de
+                            Doação de Sangue</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="guia-e-compatibilidade"
+                            href="#">Dúvidas Frequentes & Compatibilidade</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="hemocentros" href="#">Hospitais &
+                            Hemocentros Parceiros</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="admin-simulador" href="#">API
+                            Hemocentros & Integração RNDS</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" href="#">Privacidade de Dados & LGPD em
+                            Saúde</a></li>
+                </ul>
+            </div>
+            <div class="space-y-space-sm">
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Canais de Emergência & Apoio</h4>
+                <div
+                    class="p-space-sm rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.03)] space-y-space-xs">
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Disque Doação SUS</span><span
+                            class="font-headline-sm text-headline-sm font-bold text-primary">136</span></div>
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Central 24h</span><span
+                            class="font-label-md text-label-md font-bold text-on-surface">0800 700 VIDA</span></div>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container text-on-surface">
+                    <div class="flex items-center gap-space-xs"><span
+                            class="material-symbols-outlined text-tertiary">verified</span><span
+                            class="font-label-sm text-label-sm font-bold">Hackathon Evaluation Edition</span></div>
+                    <p class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Plataforma validada para
+                        auditoria operacional de estoques vitais e resposta rápida.</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-margin py-space-sm border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-xs text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 HemoVida. Desenvolvido para salvar
+                vidas com tecnologia humanizada.</p>
+            <div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span
+                    class="flex items-center gap-1"><span
+                        class="material-symbols-outlined text-[14px] text-tertiary">health_and_safety</span>
+                    Conformidade ANVISA RDC 34/2014</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>
