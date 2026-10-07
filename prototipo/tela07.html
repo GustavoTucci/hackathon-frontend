@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#faf8ff", "secondary-fixed": "#ffdad6", "on-tertiary-fixed": "#002113", "on-surface-variant": "#5c403c", "inverse-primary": "#ffb4ab", "on-surface": "#131b2e", "on-secondary-container": "#690007", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#6ffbbe", "surface-container": "#eaedff", "primary-fixed-dim": "#ffb4ab", "error": "#ba1a1a", "primary-fixed": "#ffdad6", "on-background": "#131b2e", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "surface-tint": "#bf0715", "primary": "#b70011", "on-secondary-fixed-variant": "#8e1214", "on-primary-fixed-variant": "#93000b", "on-primary-fixed": "#410002", "primary-container": "#dc2626", "background": "#faf8ff", "on-primary-container": "#fff6f5", "surface-bright": "#faf8ff", "surface-variant": "#dae2fd", "surface-dim": "#d2d9f4", "on-primary": "#ffffff", "on-secondary-fixed": "#410002", "on-tertiary-container": "#e1ffec", "on-secondary": "#ffffff", "inverse-surface": "#283044", "tertiary-fixed-dim": "#4edea3", "outline": "#916f6b", "tertiary": "#006645", "secondary-container": "#ff665c", "inverse-on-surface": "#eef0ff", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb4ac", "surface-container-lowest": "#ffffff", "outline-variant": "#e6bdb8", "error-container": "#ffdad6", "secondary": "#b02d29", "on-tertiary-fixed-variant": "#005236", "tertiary-container": "#008259" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "metric-display": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-display": ["2.5rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-28 w-full max-w-[1440px] mx-auto px-margin flex flex-col justify-between py-space-xs">
+            <div class="flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-sm"><img alt="HemoVida Logo" class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" />
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-space-xs"><span
+                                class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">HemoVida</span><span
+                                class="px-space-xs py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">SUS
+                                Conectado • ODS 3</span></div><span
+                            class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Rede
+                            Inteligente de Hemocentros</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-error-container text-on-error-container">
+                        <span class="relative flex h-2.5 w-2.5"><span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span
+                                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span></span><span
+                            class="font-label-sm text-label-sm font-bold">SOS Sangue: O- e A- Críticos</span></div><a
+                        class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-space-xs shadow-[0_2px_8px_rgba(220,38,38,0.25)]"
+                        data-path="agendar-doacao" href="#"><span
+                            class="material-symbols-outlined text-[16px]">add</span><span>+ Agendar Agora</span></a>
+                    <div class="flex items-center gap-space-xs pl-space-sm"><img alt="Profile"
+                            class="w-8 h-8 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcSXqX3UdnH3VnFZypxyrvrpChSddo1pywZMeLSRXixiU6XEJnmIL7FRta_hVT17YqnDXb8faG3RUox5TwxF6dBgcm_iAhNKXAriJnxwDx2Dtsv6M7OKqnjCeSy9Q0-3Tm_y1CEci6QCR9etBU2PR_1_h_usomRebezGBadA_SQPBPA6zfDO75t1IunyeuApCKcZ-E2TRAhBz1t1ZPBEScSFuG12uxkFV0s7d6G7jl" />
+                        <div class="hidden md:flex flex-col text-left"><span
+                                class="font-label-sm text-label-sm font-bold text-on-surface leading-tight">Gustavo
+                                T.</span><span
+                                class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">O-
+                                Doador Universal</span></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex items-center gap-space-xs overflow-x-auto pb-1"
+                data-active-classes="bg-surface-container text-primary font-bold rounded-lg"><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="home" href="#">Início</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="estoque-em-tempo-real" href="#">Estoque em Tempo Real</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="posso-doar" href="#">Posso Doar? (Triagem)</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="hemocentros" href="#">Hemocentros</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Doação</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="carteirinha-digital" href="#">Carteirinha Digital</a><a aria-current="page"
+                    class="px-space-sm py-1 transition-colors whitespace-nowrap bg-surface-container text-primary font-bold rounded-lg"
+                    data-path="conquistas" href="#">Conquistas</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="pedidos-urgentes" href="#">Pedidos Urgentes</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="guia-e-compatibilidade" href="#">Guia & Compatibilidade</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="admin-simulador" href="#">Admin / Simulador</a></nav>
+        </div>
+        <div class="w-full bg-error-container text-on-error-container py-1.5 px-margin">
+            <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-space-sm text-center md:text-left">
+                <div class="flex items-center gap-space-xs mx-auto md:mx-0"><span
+                        class="material-symbols-outlined text-[18px] text-primary animate-pulse">warning</span>
+                    <p class="font-label-sm text-label-sm"><span class="font-bold">Alerta Rede Hemominas & Grande
+                            SP:</span> Reservas de O- estão em 18% da capacidade ideal. Doadores O- e A-, agendem sua
+                        doação.</p>
+                </div><a
+                    class="hidden lg:inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary hover:underline whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Prioridade <span
+                        class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-28 bg-surface">
+        <div class="flex flex-col w-full">
+            <div class="w-full max-w-6xl mx-auto py-8 px-6 space-y-10">
+                <!-- Top Diagnostic & Recognition Status Bar -->
+                <div
+                    class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl bg-surface-container-low shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+                            <span class="material-symbols-outlined text-[24px]">military_tech</span>
+                        </div>
+                        <div>
+                            <span
+                                class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Registro
+                                Nacional de Fidelização SUS</span>
+                            <p class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">
+                                Gamificação Solidária & Reconhecimento Cívico</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 self-stretch sm:self-auto justify-end">
+                        <span
+                            class="px-3 py-1.5 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md font-bold shadow-sm flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+                            Doador Ativo • RNDS #BR-94821
+                        </span>
+                    </div>
+                </div>
+                <!-- Section 1: Hero Header & Donor Tier Profile Card -->
+                <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                    <!-- Main Profile & Tier Card -->
+                    <div
+                        class="lg:col-span-8 p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden">
+                        <div
+                            class="absolute -right-8 -top-8 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none">
+                        </div>
+                        <div class="relative z-10 space-y-6">
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="relative">
+                                        <img alt="Gustavo Toledo" class="w-20 h-20 rounded-2xl object-cover shadow-md"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcSXqX3UdnH3VnFZypxyrvrpChSddo1pywZMeLSRXixiU6XEJnmIL7FRta_hVT17YqnDXb8faG3RUox5TwxF6dBgcm_iAhNKXAriJnxwDx2Dtsv6M7OKqnjCeSy9Q0-3Tm_y1CEci6QCR9etBU2PR_1_h_usomRebezGBadA_SQPBPA6zfDO75t1IunyeuApCKcZ-E2TRAhBz1t1ZPBEScSFuG12uxkFV0s7d6G7jl" />
+                                        <span
+                                            class="absolute -bottom-1 -right-1 px-1.5 py-0.5 rounded-md bg-primary-container text-on-primary-container font-label-sm text-[10px] font-bold">O-</span>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <h1
+                                                class="font-headline-md text-headline-md text-on-surface font-extrabold">
+                                                Gustavo Toledo</h1>
+                                            <span
+                                                class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">Nível
+                                                2</span>
+                                        </div>
+                                        <p
+                                            class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+                                            <span
+                                                class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+                                            4 Doações Realizadas • 16 Vidas Potencialmente Impactadas
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-2.5 rounded-xl bg-surface-container flex items-center gap-2.5">
+                                    <span class="text-2xl">🔥</span>
+                                    <div>
+                                        <div class="font-label-md text-label-md text-on-surface font-bold">Sequência de
+                                            2 Anos Ativo</div>
+                                        <div class="font-label-sm text-[11px] text-on-surface-variant">Doações
+                                            semestrais ininterruptas</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tier Progress Box -->
+                            <div class="p-5 rounded-xl bg-surface-container-low space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-[20px] text-primary">shield</span>
+                                        <span class="font-label-lg text-label-lg text-on-surface font-bold">Nível 2 —
+                                            Doador Frequente</span>
+                                        <span class="text-on-surface-variant font-label-sm text-label-sm">➔ Rumo a Nível
+                                            3 — Doador Honorário</span>
+                                    </div>
+                                    <span class="font-label-md text-label-md text-primary font-bold">380 / 500 XP</span>
+                                </div>
+                                <!-- Progress Bar -->
+                                <div class="w-full h-3 rounded-full bg-surface-container overflow-hidden">
+                                    <div class="h-full bg-primary-container rounded-full transition-all duration-700 ease-out"
+                                        style="width: 76%;"></div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant pt-1">
+                                    <span>Faltam <strong class="text-on-surface">120 XP</strong> (equivalente a 1 nova
+                                        doação ou 2 indicações confirmadas)</span>
+                                    <span class="text-tertiary font-bold">+100 XP por doação regular</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="mt-6 pt-5 flex flex-wrap items-center justify-between gap-4 font-label-sm text-label-sm text-on-surface-variant">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px] text-outline">event_available</span>
+                                <span>Próxima doação liberada: <strong>14/05/2026</strong></span>
+                            </div>
+                            <a class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-1.5 shadow-sm"
+                                data-path="agendar-doacao" href="#">
+                                <span class="material-symbols-outlined text-[16px]">calendar_add_on</span>
+                                <span>Pré-Agendar Notificação</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Tier Privileges & Shield Showcase Card -->
+                    <div
+                        class="lg:col-span-4 p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Insígnia
+                                    de Honra</span>
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Prata
+                                    Razoada</span>
+                            </div>
+                            <div class="flex flex-col items-center justify-center py-4 text-center">
+                                <!-- Tier 2 Silver Shield Graphic -->
+                                <div
+                                    class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-surface-container to-surface-container-highest flex items-center justify-center shadow-inner relative mb-3">
+                                    <svg class="w-16 h-16 text-primary drop-shadow" fill="currentColor"
+                                        viewbox="0 0 24 24">
+                                        <path
+                                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.15 8.79-7 9.88-3.85-1.09-7-5.34-7-9.88V6.3l7-3.12zm-1 4.82v6h2v-6h-2zm0 8v2h2v-2h-2z">
+                                        </path>
+                                    </svg>
+                                    <div
+                                        class="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-[11px] shadow-sm">
+                                        2</div>
+                                </div>
+                                <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Escudo da
+                                    Solidariedade</h2>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">Concedido aos
+                                    voluntários com compromisso clínico contínuo e histórico sanitário exemplar.</p>
+                            </div>
+                            <div class="space-y-2 pt-2">
+                                <span
+                                    class="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">Benefícios
+                                    Cívicos Ativos:</span>
+                                <ul class="space-y-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-tertiary">task_alt</span>
+                                        <span>Isenção de taxa em concursos públicos estaduais</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-tertiary">task_alt</span>
+                                        <span>Atendimento prioritário na triagem clínica</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-tertiary">task_alt</span>
+                                        <span>Canal direto via WhatsApp para plantão de urgência</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            class="pt-4 mt-4 bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-[20px]">stars</span>
+                                <span class="font-label-sm text-label-sm font-bold text-on-surface">Próximo Nível:
+                                    Doador Honorário</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm font-bold text-primary">500 XP</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 2: Solidarity Badges Grid -->
+                <section class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="px-2.5 py-0.5 rounded-md bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">Galeria
+                                    de Mérito</span>
+                                <h2 class="font-headline-md text-headline-md text-on-surface font-extrabold">Medalhas de
+                                    Impacto Solidário</h2>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Conquistas oficiais
+                                homologadas pelo HemoVida em parceria com a rede Hemominas, Pró-Sangue e hemocentros
+                                credenciados.</p>
+                        </div>
+                        <!-- Filter tabs for micro-interaction -->
+                        <div class="flex items-center gap-1.5 p-1 rounded-xl bg-surface-container" id="badgeFilters">
+                            <button
+                                class="px-3 py-1.5 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm font-bold text-primary shadow-sm"
+                                onclick="filterBadges('all', this)" type="button">Todas (6)</button>
+                            <button
+                                class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                                onclick="filterBadges('unlocked', this)" type="button">Desbloqueadas (4)</button>
+                            <button
+                                class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                                onclick="filterBadges('locked', this)" type="button">Bloqueadas (2)</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="badgesContainer">
+                        <!-- Badge 1: Primeira Gota (Unlocked) -->
+                        <div
+                            class="badge-item unlocked p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="space-y-4">
+                                <div class="flex items-start justify-between">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-secondary relative shadow-sm group-hover:scale-105 transition-transform">
+                                        <!-- Bronze Laurel Droplet -->
+                                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewbox="0 0 24 24">
+                                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                                        </svg>
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-tertiary-container absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5">check_circle</span>
+                                    </div>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container text-tertiary font-label-sm text-[11px] font-bold flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                        Desbloqueada
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Primeira
+                                        Gota</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Completou a
+                                        primeira doação voluntária no HemoVida.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-4 rounded-b-2xl flex items-center justify-between">
+                                <span class="font-label-sm text-[11px] text-on-surface-variant">Desbloqueado em
+                                    <strong>15/09/2025</strong></span>
+                                <span class="font-label-sm text-label-sm font-bold text-primary">+100 XP</span>
+                            </div>
+                        </div>
+                        <!-- Badge 2: Coração Generoso (Unlocked) -->
+                        <div
+                            class="badge-item unlocked p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="space-y-4">
+                                <div class="flex items-start justify-between">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-primary relative shadow-sm group-hover:scale-105 transition-transform">
+                                        <!-- Silver Heart with Pulse -->
+                                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewbox="0 0 24 24">
+                                            <path
+                                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                                            </path>
+                                        </svg>
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-tertiary-container absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5">check_circle</span>
+                                    </div>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container text-tertiary font-label-sm text-[11px] font-bold flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                        Desbloqueada
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Coração
+                                        Generoso</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Realizou 3 ou mais
+                                        doações registradas no ecossistema.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-4 rounded-b-2xl flex items-center justify-between">
+                                <span class="font-label-sm text-[11px] text-on-surface-variant">Desbloqueado em
+                                    <strong>14/02/2026</strong></span>
+                                <span class="font-label-sm text-label-sm font-bold text-primary">+150 XP</span>
+                            </div>
+                        </div>
+                        <!-- Badge 3: Herói Universal (Unlocked - Distinction) -->
+                        <div
+                            class="badge-item unlocked p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group relative overflow-hidden">
+                            <div class="space-y-4">
+                                <div class="flex items-start justify-between">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary relative shadow-sm group-hover:scale-105 transition-transform">
+                                        <!-- Ruby Droplet with Stars -->
+                                        <svg class="w-8 h-8 text-primary-container" fill="currentColor"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M12 2c-4.42 5.3-7 9.17-7 12.5 0 4.14 3.13 7.5 7 7.5s7-3.36 7-7.5c0-3.33-2.58-7.2-7-12.5zm0 18c-2.76 0-5-2.24-5-5 0-2.45 2.05-5.64 5-9.35 2.95 3.71 5 6.9 5 9.35 0 2.76-2.24 5-5 5z">
+                                            </path>
+                                        </svg>
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-tertiary-container absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5">verified</span>
+                                    </div>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-bold">
+                                        Distinção Especial
+                                    </span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-1.5">
+                                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Herói
+                                            Universal</h3>
+                                        <span class="text-amber-500 text-sm">✦</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Doador O- com
+                                        sangue compatível com todos os pacientes do Brasil.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-4 rounded-b-2xl flex items-center justify-between">
+                                <span
+                                    class="font-label-sm text-[11px] text-on-surface-variant font-bold text-primary">Grupo
+                                    Sanguíneo O-</span>
+                                <span class="font-label-sm text-label-sm font-bold text-primary">+200 XP</span>
+                            </div>
+                        </div>
+                        <!-- Badge 4: Guardião da Vida (Locked) -->
+                        <div
+                            class="badge-item locked p-6 rounded-2xl bg-surface-container-low opacity-90 shadow-sm flex flex-col justify-between group">
+                            <div class="space-y-4">
+                                <div class="flex items-start justify-between">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant/60 relative">
+                                        <span class="material-symbols-outlined text-[30px]">shield_lock</span>
+                                    </div>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[11px] font-bold flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[13px]">lock</span>
+                                        Bloqueado (4/5)
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Guardião da
+                                        Vida</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Alcance 5 doações
+                                        de sangue para desbloquear este status nobre.</p>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div
+                                        class="flex items-center justify-between font-label-sm text-[11px] text-on-surface-variant">
+                                        <span>Progresso: 4 de 5 doações</span>
+                                        <span class="font-bold">80%</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+                                        <div class="h-full bg-outline rounded-full" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-6 pt-4 bg-surface-container -mx-6 -mb-6 p-4 rounded-b-2xl flex items-center justify-between">
+                                <span class="font-label-sm text-[11px] text-on-surface-variant">Falta apenas 1
+                                    doação</span>
+                                <span class="font-label-sm text-label-sm font-bold text-outline">+250 XP</span>
+                            </div>
+                        </div>
+                        <!-- Badge 5: Embaixador Solidário (Locked) -->
+                        <div
+                            class="badge-item locked p-6 rounded-2xl bg-surface-container-low opacity-90 shadow-sm flex flex-col justify-between group">
+                            <div class="space-y-4">
+                                <div class="flex items-start justify-between">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant/60 relative">
+                                        <span class="material-symbols-outlined text-[30px]">campaign</span>
+                                    </div>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[11px] font-bold flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[13px]">lock</span>
+                                        Bloqueado
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Embaixador
+                                        Solidário</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Compartilhe um
+                                        pedido urgente de sangue e motive 2 amigos a doarem.</p>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div
+                                        class="flex items-center justify-between font-label-sm text-[11px] text-on-surface-variant">
+                                        <span>Indicações concluídas: 0 de 2</span>
+                                        <span class="font-bold">0%</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+                                        <div class="h-full bg-outline rounded-full" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-6 pt-4 bg-surface-container -mx-6 -mb-6 p-4 rounded-b-2xl flex items-center justify-between">
+                                <span class="font-label-sm text-[11px] text-on-surface-variant">Ação da
+                                    Comunidade</span>
+                                <span class="font-label-sm text-label-sm font-bold text-outline">+150 XP</span>
+                            </div>
+                        </div>
+                        <!-- Badge 6: Vigilante das Emergências (Unlocked) -->
+                        <div
+                            class="badge-item unlocked p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="space-y-4">
+                                <div class="flex items-start justify-between">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl bg-error-container flex items-center justify-center text-error relative shadow-sm group-hover:scale-105 transition-transform">
+                                        <!-- Red Radar Beacon -->
+                                        <span
+                                            class="material-symbols-outlined text-[30px] animate-pulse">crisis_alert</span>
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-tertiary-container absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5">check_circle</span>
+                                    </div>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container text-tertiary font-label-sm text-[11px] font-bold flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                        Desbloqueada
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Vigilante
+                                        das Emergências</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Respondeu a uma
+                                        notificação SOS de estoque crítico em menos de 48 horas.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-4 rounded-b-2xl flex items-center justify-between">
+                                <span class="font-label-sm text-[11px] text-on-surface-variant">Plantão Hemominas
+                                    2025</span>
+                                <span class="font-label-sm text-label-sm font-bold text-primary">+180 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 3: Social Share & Community Impact Action Bar -->
+                <section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                        <div class="space-y-2 max-w-xl">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold">
+                                <span class="material-symbols-outlined text-[16px]">share_reviews</span>
+                                Multiplicador de Solidariedade
+                            </div>
+                            <h2 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">
+                                Compartilhe suas conquistas e inspire novos doadores!</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Cada compartilhamento com
+                                certificado ou status ativo gera conscientização e incentiva até 3 novos cadastros no
+                                SUS Conectado.</p>
+                        </div>
+                        <!-- Social Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-3">
+                            <!-- WhatsApp Button -->
+                            <button
+                                class="px-4 py-3 rounded-xl bg-tertiary text-on-tertiary font-label-md text-label-md font-bold hover:bg-tertiary-container transition-all flex items-center gap-2 shadow-sm"
+                                onclick="shareWhatsApp()" type="button">
+                                <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                                    <path
+                                        d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.02.79.81-2.95-.19-.3a8.182 8.182 0 0 1-1.25-4.36c0-4.54 3.7-8.24 8.24-8.24h-.22z">
+                                    </path>
+                                </svg>
+                                <span>Compartilhar no WhatsApp</span>
+                            </button>
+                            <!-- Instagram Story Generator -->
+                            <button
+                                class="px-4 py-3 rounded-xl bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold hover:bg-secondary-fixed-dim transition-all flex items-center gap-2 shadow-sm"
+                                onclick="openStoryModal()" type="button">
+                                <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                                <span>Gerar Story para Instagram</span>
+                            </button>
+                            <!-- PDF Certificate Download -->
+                            <button
+                                class="px-4 py-3 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high transition-all flex items-center gap-2 shadow-sm"
+                                onclick="downloadCertificate()" type="button">
+                                <span class="material-symbols-outlined text-[20px] text-primary">download</span>
+                                <span>Baixar Certificado (PDF)</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Quick Donor Card Mock Preview for Sharing -->
+                    <div
+                        class="p-6 rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+                                <span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+                            </div>
+                            <div>
+                                <div class="font-label-md text-label-md text-on-surface font-bold">Certificado Oficial
+                                    de Doador Benemérito</div>
+                                <div class="font-body-sm text-body-sm text-on-surface-variant">Autenticado com carimbo
+                                    digital ICP-Brasil e código de validação SUS #HV-2026-94821</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Validado em
+                                14/02/2026</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-surface-container-lowest text-tertiary font-label-sm text-label-sm font-bold shadow-sm">Autêntico</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 4: Community Leaderboard Teaser -->
+                <section class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="px-2.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">Impacto
+                                    Coletivo</span>
+                                <h2 class="font-headline-md text-headline-md text-on-surface font-extrabold">Ranking de
+                                    Mobilização Solidária • São Paulo</h2>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Gincana humanitária
+                                interinstitucional de doação de sangue no estado de São Paulo (Março 2026).</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-outline text-[18px]">location_on</span>
+                            <span class="font-label-md text-label-md text-on-surface font-bold">Região Metropolitana &
+                                Interior</span>
+                        </div>
+                    </div>
+                    <!-- Leaderboard Tabs & Podium Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Category 1: Campanhas Universitárias -->
+                        <div
+                            class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-5">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[16px] text-primary">school</span>
+                                        Universidades
+                                    </span>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Top 3</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Troféu Trote
+                                    Solidário</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Calouros e veteranos
+                                    mobilizados pela vida.</p>
+                            </div>
+                            <div class="space-y-3">
+                                <!-- Rank 1 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center">1º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Medicina
+                                                USP / HC</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">420 bolsas
+                                                coletadas</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+1.680
+                                        vidas</span>
+                                </div>
+                                <!-- Rank 2 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center">2º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Poli-USP
+                                            </div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">315 bolsas
+                                                coletadas</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+1.260
+                                        vidas</span>
+                                </div>
+                                <!-- Rank 3 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-amber-50 text-amber-700 font-bold text-xs flex items-center justify-center">3º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Unicamp
+                                                Campinas</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">288 bolsas
+                                                coletadas</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+1.152
+                                        vidas</span>
+                                </div>
+                            </div>
+                            <div class="pt-2 text-center">
+                                <a class="font-label-sm text-label-sm text-primary font-bold hover:underline inline-flex items-center gap-1"
+                                    href="#">
+                                    Ver classificação completa <span
+                                        class="material-symbols-outlined text-[14px]">chevron_right</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Category 2: Empresas Parceiras -->
+                        <div
+                            class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-5">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+                                        Empresas & ESG
+                                    </span>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Top 3</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Selo Empresa
+                                    Cidadã</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Corredores corporativos
+                                    salvando estoques.</p>
+                            </div>
+                            <div class="space-y-3">
+                                <!-- Rank 1 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center">1º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Banco
+                                                Itaú Solidário</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">540
+                                                colaboradores</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+2.160
+                                        vidas</span>
+                                </div>
+                                <!-- Rank 2 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center">2º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Ambev
+                                                Polo SP</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">390
+                                                colaboradores</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+1.560
+                                        vidas</span>
+                                </div>
+                                <!-- Rank 3 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-amber-50 text-amber-700 font-bold text-xs flex items-center justify-center">3º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Embraer
+                                                Gavião Peixoto</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">275
+                                                colaboradores</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+1.100
+                                        vidas</span>
+                                </div>
+                            </div>
+                            <div class="pt-2 text-center">
+                                <a class="font-label-sm text-label-sm text-primary font-bold hover:underline inline-flex items-center gap-1"
+                                    href="#">
+                                    Cadastrar sua empresa <span
+                                        class="material-symbols-outlined text-[14px]">chevron_right</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Category 3: Comunidades de Bairro -->
+                        <div
+                            class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-5">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[16px] text-primary">groups</span>
+                                        Comunidades
+                                    </span>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Top 3</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Bairros Unidos
+                                    pela Vida</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Coletivos locais e
+                                    associações de moradores.</p>
+                            </div>
+                            <div class="space-y-3">
+                                <!-- Rank 1 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center">1º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Mooca &
+                                                Brás Sangue Bom</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">260 doadores
+                                                ativos</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+1.040
+                                        vidas</span>
+                                </div>
+                                <!-- Rank 2 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center">2º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Coletivo
+                                                Vila Madalena</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">210 doadores
+                                                ativos</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+840 vidas</span>
+                                </div>
+                                <!-- Rank 3 -->
+                                <div
+                                    class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span
+                                            class="w-6 h-6 rounded-full bg-amber-50 text-amber-700 font-bold text-xs flex items-center justify-center">3º</span>
+                                        <div>
+                                            <div class="font-label-md text-label-md font-bold text-on-surface">Amigos de
+                                                Santana / Znorte</div>
+                                            <div class="font-label-sm text-[11px] text-on-surface-variant">195 doadores
+                                                ativos</div>
+                                        </div>
+                                    </div>
+                                    <span class="font-label-sm text-label-sm font-bold text-tertiary">+780 vidas</span>
+                                </div>
+                            </div>
+                            <div class="pt-2 text-center">
+                                <a class="font-label-sm text-label-sm text-primary font-bold hover:underline inline-flex items-center gap-1"
+                                    href="#">
+                                    Criar grupo de bairro <span
+                                        class="material-symbols-outlined text-[14px]">chevron_right</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Interactive Story Modal Simulator (Hidden by default) -->
+                <div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+                    id="storyModal">
+                    <div
+                        class="bg-surface-container-lowest rounded-3xl p-6 max-w-sm w-full space-y-5 shadow-2xl relative">
+                        <button
+                            class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high"
+                            onclick="closeStoryModal()" type="button">
+                            <span class="material-symbols-outlined text-[18px]">close</span>
+                        </button>
+                        <div class="text-center space-y-1">
+                            <span
+                                class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Prévia
+                                do Story 9:16</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Seu Card
+                                Instagram</h3>
+                        </div>
+                        <!-- Simulated Story Canvas -->
+                        <div
+                            class="w-full aspect-[9/16] rounded-2xl bg-gradient-to-b from-primary to-primary-container p-6 text-on-primary flex flex-col justify-between shadow-inner relative overflow-hidden">
+                            <div
+                                class="absolute -right-12 -top-12 w-40 h-40 bg-white/10 rounded-full blur-xl pointer-events-none">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-bold text-sm tracking-tight">HemoVida</span>
+                                    <span class="text-[10px] bg-white/20 px-2 py-0.5 rounded-full">SUS</span>
+                                </div>
+                                <span class="text-[11px] font-bold opacity-90">14/02/2026</span>
+                            </div>
+                            <div class="space-y-3 text-center my-auto">
+                                <div
+                                    class="w-16 h-16 mx-auto rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-lg">
+                                    <span
+                                        class="material-symbols-outlined text-[32px] text-white">volunteer_activism</span>
+                                </div>
+                                <div class="text-xs uppercase tracking-widest font-semibold opacity-90">Doador Frequente
+                                    • Nível 2</div>
+                                <div class="text-2xl font-black leading-tight">Gustavo Toledo salvou até 16 vidas!</div>
+                                <p class="text-[11px] opacity-80 max-w-xs mx-auto">Sangue O- doado no hemocentro. Seja
+                                    também um herói anônimo.</p>
+                            </div>
+                            <div class="bg-white/15 backdrop-blur-md rounded-xl p-3 text-center space-y-1">
+                                <div class="text-[10px] font-bold uppercase">Doe sangue você também</div>
+                                <div class="text-xs font-extrabold">hemovida.gov.br/gustavo-t</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <button
+                                class="w-full py-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2"
+                                onclick="alert('Story gerado e copiado para a área de transferência! Abra o Instagram e cole.')"
+                                type="button">
+                                <span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+                                <span>Salvar Imagem em HD</span>
+                            </button>
+                            <button
+                                class="w-full py-2.5 rounded-xl text-on-surface-variant font-label-md text-label-md font-medium hover:bg-surface-container"
+                                onclick="closeStoryModal()" type="button">
+                                Fechar Visualização
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function filterBadges(status, btnElement) {
+                const buttons = document.querySelectorAll('#badgeFilters button');
+                buttons.forEach(btn => {
+                    btn.className = 'px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors';
+                });
+                btnElement.className = 'px-3 py-1.5 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm font-bold text-primary shadow-sm';
+
+                const badges = document.querySelectorAll('.badge-item');
+                badges.forEach(badge => {
+                    if (status === 'all') {
+                        badge.classList.remove('hidden');
+                    } else if (status === 'unlocked') {
+                        if (badge.classList.contains('unlocked')) {
+                            badge.classList.remove('hidden');
+                        } else {
+                            badge.classList.add('hidden');
+                        }
+                    } else if (status === 'locked') {
+                        if (badge.classList.contains('locked')) {
+                            badge.classList.remove('hidden');
+                        } else {
+                            badge.classList.add('hidden');
+                        }
+                    }
+                });
+            }
+
+            function shareWhatsApp() {
+                const text = encodeURIComponent('Olá! Acabei de alcançar o Nível 2 (Doador Frequente) no HemoVida! Já ajudei até 16 vidas com minhas doações de sangue. Venha doar também e faça parte dessa corrente: https://hemovida.saude.gov.br');
+                window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+            }
+
+            function openStoryModal() {
+                document.getElementById('storyModal').classList.remove('hidden');
+            }
+
+            function closeStoryModal() {
+                document.getElementById('storyModal').classList.add('hidden');
+            }
+
+            function downloadCertificate() {
+                alert('Preparando seu Certificado Digital de Doador Benemérito (PDF)... O download iniciará em instantes com autenticação digital SUS.');
+            }
+        </script>
+    </main>
+    <footer
+        class="w-full bg-surface-container-low text-on-surface-variant mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1440px] mx-auto px-margin py-space-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="space-y-space-sm">
+                <div class="flex items-center gap-space-xs"><img alt="HemoVida Logo" class="h-7 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" /><span
+                        class="font-headline-sm text-headline-sm text-primary font-bold">HemoVida</span></div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Rede inteligente de suporte à doação de
+                    sangue e gestão integrada de hemocentros clínicos, orientada pelo ODS 3 da ONU (Saúde e Bem-Estar -
+                    Metas 3.8 e 3.d).</p>
+                <div class="flex items-center gap-space-xs pt-space-xs"><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">ODS
+                        3 • Saúde</span><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">SUS
+                        Integrado</span></div>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Links Rápidos & Diretrizes</h4>
+                <ul class="space-y-space-xs font-body-sm text-body-sm">
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="posso-doar" href="#">Critérios de
+                            Doação de Sangue</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="guia-e-compatibilidade"
+                            href="#">Dúvidas Frequentes & Compatibilidade</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="hemocentros" href="#">Hospitais &
+                            Hemocentros Parceiros</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="admin-simulador" href="#">API
+                            Hemocentros & Integração RNDS</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" href="#">Privacidade de Dados & LGPD em
+                            Saúde</a></li>
+                </ul>
+            </div>
+            <div class="space-y-space-sm">
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Canais de Emergência & Apoio</h4>
+                <div
+                    class="p-space-sm rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.03)] space-y-space-xs">
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Disque Doação SUS</span><span
+                            class="font-headline-sm text-headline-sm font-bold text-primary">136</span></div>
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Central 24h</span><span
+                            class="font-label-md text-label-md font-bold text-on-surface">0800 700 VIDA</span></div>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container text-on-surface">
+                    <div class="flex items-center gap-space-xs"><span
+                            class="material-symbols-outlined text-tertiary">verified</span><span
+                            class="font-label-sm text-label-sm font-bold">Hackathon Evaluation Edition</span></div>
+                    <p class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Plataforma validada para
+                        auditoria operacional de estoques vitais e resposta rápida.</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-margin py-space-sm border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-xs text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 HemoVida. Desenvolvido para salvar
+                vidas com tecnologia humanizada.</p>
+            <div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span
+                    class="flex items-center gap-1"><span
+                        class="material-symbols-outlined text-[14px] text-tertiary">health_and_safety</span>
+                    Conformidade ANVISA RDC 34/2014</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>
