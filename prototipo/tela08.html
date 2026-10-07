@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#faf8ff", "secondary-fixed": "#ffdad6", "on-tertiary-fixed": "#002113", "on-surface-variant": "#5c403c", "inverse-primary": "#ffb4ab", "on-surface": "#131b2e", "on-secondary-container": "#690007", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#6ffbbe", "surface-container": "#eaedff", "primary-fixed-dim": "#ffb4ab", "error": "#ba1a1a", "primary-fixed": "#ffdad6", "on-background": "#131b2e", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "surface-tint": "#bf0715", "primary": "#b70011", "on-secondary-fixed-variant": "#8e1214", "on-primary-fixed-variant": "#93000b", "on-primary-fixed": "#410002", "primary-container": "#dc2626", "background": "#faf8ff", "on-primary-container": "#fff6f5", "surface-bright": "#faf8ff", "surface-variant": "#dae2fd", "surface-dim": "#d2d9f4", "on-primary": "#ffffff", "on-secondary-fixed": "#410002", "on-tertiary-container": "#e1ffec", "on-secondary": "#ffffff", "inverse-surface": "#283044", "tertiary-fixed-dim": "#4edea3", "outline": "#916f6b", "tertiary": "#006645", "secondary-container": "#ff665c", "inverse-on-surface": "#eef0ff", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb4ac", "surface-container-lowest": "#ffffff", "outline-variant": "#e6bdb8", "error-container": "#ffdad6", "secondary": "#b02d29", "on-tertiary-fixed-variant": "#005236", "tertiary-container": "#008259" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "metric-display": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-display": ["2.5rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-28 w-full max-w-[1440px] mx-auto px-margin flex flex-col justify-between py-space-xs">
+            <div class="flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-sm"><img alt="HemoVida Logo" class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" />
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-space-xs"><span
+                                class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">HemoVida</span><span
+                                class="px-space-xs py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">SUS
+                                Conectado • ODS 3</span></div><span
+                            class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Rede
+                            Inteligente de Hemocentros</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-error-container text-on-error-container">
+                        <span class="relative flex h-2.5 w-2.5"><span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span
+                                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span></span><span
+                            class="font-label-sm text-label-sm font-bold">SOS Sangue: O- e A- Críticos</span></div><a
+                        class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-space-xs shadow-[0_2px_8px_rgba(220,38,38,0.25)]"
+                        data-path="agendar-doacao" href="#"><span
+                            class="material-symbols-outlined text-[16px]">add</span><span>+ Agendar Agora</span></a>
+                    <div class="flex items-center gap-space-xs pl-space-sm"><img alt="Profile"
+                            class="w-8 h-8 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcSXqX3UdnH3VnFZypxyrvrpChSddo1pywZMeLSRXixiU6XEJnmIL7FRta_hVT17YqnDXb8faG3RUox5TwxF6dBgcm_iAhNKXAriJnxwDx2Dtsv6M7OKqnjCeSy9Q0-3Tm_y1CEci6QCR9etBU2PR_1_h_usomRebezGBadA_SQPBPA6zfDO75t1IunyeuApCKcZ-E2TRAhBz1t1ZPBEScSFuG12uxkFV0s7d6G7jl" />
+                        <div class="hidden md:flex flex-col text-left"><span
+                                class="font-label-sm text-label-sm font-bold text-on-surface leading-tight">Gustavo
+                                T.</span><span
+                                class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">O-
+                                Doador Universal</span></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex items-center gap-space-xs overflow-x-auto pb-1"
+                data-active-classes="bg-surface-container text-primary font-bold rounded-lg"><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="home" href="#">Início</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="estoque-em-tempo-real" href="#">Estoque em Tempo Real</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="posso-doar" href="#">Posso Doar? (Triagem)</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="hemocentros" href="#">Hemocentros</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Doação</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="carteirinha-digital" href="#">Carteirinha Digital</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="conquistas" href="#">Conquistas</a><a aria-current="page"
+                    class="px-space-sm py-1 transition-colors whitespace-nowrap bg-surface-container text-primary font-bold rounded-lg"
+                    data-path="pedidos-urgentes" href="#">Pedidos Urgentes</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="guia-e-compatibilidade" href="#">Guia & Compatibilidade</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="admin-simulador" href="#">Admin / Simulador</a></nav>
+        </div>
+        <div class="w-full bg-error-container text-on-error-container py-1.5 px-margin">
+            <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-space-sm text-center md:text-left">
+                <div class="flex items-center gap-space-xs mx-auto md:mx-0"><span
+                        class="material-symbols-outlined text-[18px] text-primary animate-pulse">warning</span>
+                    <p class="font-label-sm text-label-sm"><span class="font-bold">Alerta Rede Hemominas & Grande
+                            SP:</span> Reservas de O- estão em 18% da capacidade ideal. Doadores O- e A-, agendem sua
+                        doação.</p>
+                </div><a
+                    class="hidden lg:inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary hover:underline whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Prioridade <span
+                        class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-28 bg-surface">
+        <div class="flex flex-col w-full">
+            <div class="max-w-[1440px] w-full mx-auto px-margin py-space-xl space-y-space-xl">
+                <!-- Top Context & Live Status Header -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+                    <div class="space-y-space-xs max-w-2xl">
+                        <div
+                            class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold tracking-wide">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
+                            SISTEMA DE EMERGÊNCIA SUS CONECTADO • TEMPO REAL
+                        </div>
+                        <h1 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">
+                            Mural de Pedidos Urgentes de Sangue
+                        </h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Casos clínicos prioritários internados na rede hospitalar que necessitam de doações com
+                            urgência máxima. Sua indicação direciona o estoque diretamente ao leito hospitalar do
+                            paciente.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-space-sm">
+                        <button
+                            class="px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-primary transition-all duration-200 shadow-md flex items-center gap-space-xs active:scale-95"
+                            id="open-modal-btn">
+                            <span class="material-symbols-outlined text-[20px]">add_circle</span>
+                            <span>+ Criar Novo Pedido de Sangue</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Active Filters & Urgency Ticker Strip -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+                        <span
+                            class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
+                            Filtrar Apelos Ativos
+                        </span>
+                        <div class="flex items-center gap-space-xs font-label-sm text-label-sm text-tertiary">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            <span>Atualizado a cada 90 segundos via RNDS</span>
+                        </div>
+                    </div>
+                    <!-- Filter Chips -->
+                    <div class="flex items-center gap-space-xs overflow-x-auto pb-1" id="filter-container">
+                        <button
+                            class="filter-chip px-space-md py-space-xs rounded-full bg-on-surface text-surface font-label-sm text-label-sm font-bold transition-all shadow-sm"
+                            data-filter="all">
+                            Todos os Casos (12)
+                        </button>
+                        <button
+                            class="filter-chip px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-error-container hover:text-on-error-container font-label-sm text-label-sm transition-all flex items-center gap-1"
+                            data-filter="max">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            Urgência Máxima (4)
+                        </button>
+                        <button
+                            class="filter-chip px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm transition-all"
+                            data-filter="O-">
+                            O- Negativo (3)
+                        </button>
+                        <button
+                            class="filter-chip px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm transition-all"
+                            data-filter="A-">
+                            A- Negativo (2)
+                        </button>
+                        <button
+                            class="filter-chip px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm transition-all"
+                            data-filter="B-">
+                            B- Negativo (1)
+                        </button>
+                        <button
+                            class="filter-chip px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm transition-all"
+                            data-filter="platelets">
+                            Plaquetas / Aférese (2)
+                        </button>
+                    </div>
+                </div>
+                <!-- Emergency Patient Cards Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter" id="appeals-grid">
+                    <!-- CARD 1: Lucas Mendes da Silva (CRITICAL O-) -->
+                    <div class="appeal-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+                        data-blood="O-" data-urgency="max">
+                        <div class="absolute top-0 left-0 right-0 h-1.5 bg-primary"></div>
+                        <div class="space-y-space-md">
+                            <!-- Card Header & Badge -->
+                            <div class="flex items-start justify-between gap-space-sm">
+                                <span
+                                    class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold shadow-sm">
+                                    <span class="relative flex h-2 w-2">
+                                        <span
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                                    </span>
+                                    Urgência Máxima
+                                </span>
+                                <div
+                                    class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+                                    ID #8942-SP
+                                </div>
+                            </div>
+                            <!-- Patient Identity & Hospital -->
+                            <div class="flex items-start gap-space-sm pt-space-xs">
+                                <img class="w-14 h-14 rounded-full object-cover shrink-0 shadow-sm"
+                                    data-alt="Close-up documentary portrait of a young Brazilian male patient Lucas smiling softly in natural hospital ambient lighting with soft depth of field and warm clinical tones"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTUZoHx1AUM60yquPiH58wZPKAv2Pg2zHhTH36EpG0N3zDt56_WGDhrV8Bu2CqSCA5cf-dVpOUFLMB7tFwYBq3kCzDW3co2BM1l3cTbkOV3gupIwKxbXbnS0HUstRBxGTam0FutUXhQBzgz0zPJlDeZNm3k4tAf6XRTza5Lq9LaCTPJp7DQHTUBFDGwIabil-EppQDvwD8YU4-vK6HEF7nqNCFan6dp5_M7B6hB1Ly" />
+                                <div class="space-y-0.5">
+                                    <h2
+                                        class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">
+                                        Lucas Mendes da Silva, 28 anos
+                                    </h2>
+                                    <div
+                                        class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-primary">local_hospital</span>
+                                        <span>Hospital das Clínicas (ICHC) • São Paulo</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Clinical Condition Callout -->
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm space-y-1">
+                                <div
+                                    class="font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-secondary">medical_services</span>
+                                    Quadro Clínico:
+                                </div>
+                                <p>Cirurgia cardíaca de emergência (troca valvar aórtica). Necessita de concentrado de
+                                    hemácias com prova cruzada imediata.</p>
+                            </div>
+                            <!-- Blood Type Requirement Callout -->
+                            <div class="flex items-center justify-between p-space-sm rounded-lg bg-error-container/60">
+                                <div>
+                                    <span
+                                        class="block font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Tipo
+                                        Sanguíneo</span>
+                                    <span
+                                        class="font-headline-md text-headline-md text-primary font-extrabold tracking-tight">O-
+                                        (Negativo) <span
+                                            class="font-body-sm text-body-sm font-normal text-on-surface-variant">ou
+                                            O+</span></span>
+                                </div>
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-black shadow-inner">
+                                    O-
+                                </div>
+                            </div>
+                            <!-- Goal Fluid Progress Bar -->
+                            <div class="space-y-space-xs pt-space-xs">
+                                <div class="flex items-center justify-between font-label-sm text-label-sm">
+                                    <span class="font-bold text-on-surface">3 de 8 bolsas arrecadadas</span>
+                                    <span class="font-bold text-primary">37% da meta</span>
+                                </div>
+                                <div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden relative">
+                                    <div
+                                        class="h-full bg-primary rounded-full transition-all duration-700 w-[37%] relative">
+                                        <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+                                    <span class="flex items-center gap-1 font-bold text-error">
+                                        <span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+                                        Janela cirúrgica: 24h restantes
+                                    </span>
+                                    <span>Faltam 5 bolsas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Action CTAs -->
+                        <div class="pt-space-md space-y-space-xs mt-space-md">
+                            <a class="w-full py-space-sm px-space-md rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-xs shadow-sm active:scale-98"
+                                data-path="agendar-doacao" href="#">
+                                <span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+                                <span>Vou Ajudar (Agendar para este Leito)</span>
+                            </a>
+                            <button
+                                class="w-full py-space-xs px-space-md rounded-lg bg-tertiary-container/15 text-tertiary hover:bg-tertiary hover:text-on-tertiary font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-xs"
+                                onclick="shareAppeal('Lucas Mendes', 'O- Negativo', 'Hospital das Clínicas ICHC')">
+                                <span class="material-symbols-outlined text-[18px]">share</span>
+                                <span>Compartilhar Campanha no WhatsApp</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- CARD 2: Beatriz Vasconcelos (HIGH A-) -->
+                    <div class="appeal-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+                        data-blood="A-" data-urgency="high">
+                        <div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary-container"></div>
+                        <div class="space-y-space-md">
+                            <!-- Card Header & Badge -->
+                            <div class="flex items-start justify-between gap-space-sm">
+                                <span
+                                    class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold shadow-sm">
+                                    <span class="material-symbols-outlined text-[14px]">bolt</span>
+                                    Urgência Alta
+                                </span>
+                                <div
+                                    class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+                                    ID #7819-SP
+                                </div>
+                            </div>
+                            <!-- Patient Identity & Hospital -->
+                            <div class="flex items-start gap-space-sm pt-space-xs">
+                                <img class="w-14 h-14 rounded-full object-cover shrink-0 shadow-sm"
+                                    data-alt="Warm and touching portrait of an eleven year old pediatric girl patient with soft knit cap resting in clean hospital setting with colorful pediatric mural in background"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFzbQXrTDGQXdo0_reTxlSAzrQjnS-ljU2L5VEUkpQuadMIKRpwo3307L3nEupMC2a1SwbLClG0WvXcDrMzsrLlnEVUrrICzwlH9Lep1Bm7u19ET-GdoSYy5vi1V3od7XtiVx49zyvftQcUVoqIlg9g9-dXdOyh3sfSJ5p46v-PJWvu3YBcJbcKXI9nJx9RJ_cctYSTbHvN7gLrB_WUr7ObQdK7AwcgMDNl94BI2WS" />
+                                <div class="space-y-0.5">
+                                    <h2
+                                        class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">
+                                        Beatriz Vasconcelos, 11 anos
+                                    </h2>
+                                    <div
+                                        class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-primary">local_hospital</span>
+                                        <span>ITACI • Instituto de Tratamento do Câncer Infantil</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Clinical Condition Callout -->
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm space-y-1">
+                                <div
+                                    class="font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-secondary">medical_services</span>
+                                    Quadro Clínico:
+                                </div>
+                                <p>Tratamento de leucemia linfoide aguda (LLA) pós-quimioterapia intensiva com
+                                    plaquetopenia severa recorrente.</p>
+                            </div>
+                            <!-- Blood Type Requirement Callout -->
+                            <div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+                                <div>
+                                    <span
+                                        class="block font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Tipo
+                                        Sanguíneo</span>
+                                    <span
+                                        class="font-headline-md text-headline-md text-secondary font-extrabold tracking-tight">A-
+                                        (Negativo) <span
+                                            class="font-body-sm text-body-sm font-normal text-on-surface-variant">ou
+                                            Aférese</span></span>
+                                </div>
+                                <div
+                                    class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-headline-sm font-black shadow-inner">
+                                    A-
+                                </div>
+                            </div>
+                            <!-- Goal Fluid Progress Bar -->
+                            <div class="space-y-space-xs pt-space-xs">
+                                <div class="flex items-center justify-between font-label-sm text-label-sm">
+                                    <span class="font-bold text-on-surface">5 de 10 bolsas arrecadadas</span>
+                                    <span class="font-bold text-secondary">50% da meta</span>
+                                </div>
+                                <div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden relative">
+                                    <div
+                                        class="h-full bg-secondary-container rounded-full transition-all duration-700 w-[50%] relative">
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+                                    <span class="flex items-center gap-1 font-bold text-on-surface">
+                                        <span class="material-symbols-outlined text-[14px]">schedule</span>
+                                        Necessidade contínua: 48h
+                                    </span>
+                                    <span>Faltam 5 bolsas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Action CTAs -->
+                        <div class="pt-space-md space-y-space-xs mt-space-md">
+                            <a class="w-full py-space-sm px-space-md rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-xs shadow-sm"
+                                data-path="agendar-doacao" href="#">
+                                <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                                <span>Agendar Doação Dirigida</span>
+                            </a>
+                            <button
+                                class="w-full py-space-xs px-space-md rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-xs"
+                                onclick="shareAppeal('Beatriz Vasconcelos', 'A- Negativo', 'ITACI São Paulo')">
+                                <span class="material-symbols-outlined text-[18px]">share</span>
+                                <span>Compartilhar Pedido</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- CARD 3: Sr. Cláudio Antunes (HIGH B-) -->
+                    <div class="appeal-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+                        data-blood="B-" data-urgency="high">
+                        <div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+                        <div class="space-y-space-md">
+                            <!-- Card Header & Badge -->
+                            <div class="flex items-start justify-between gap-space-sm">
+                                <span
+                                    class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold shadow-sm">
+                                    <span class="material-symbols-outlined text-[14px]">bolt</span>
+                                    Urgência Alta
+                                </span>
+                                <div
+                                    class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+                                    ID #9034-SP
+                                </div>
+                            </div>
+                            <!-- Patient Identity & Hospital -->
+                            <div class="flex items-start gap-space-sm pt-space-xs">
+                                <img class="w-14 h-14 rounded-full object-cover shrink-0 shadow-sm"
+                                    data-alt="Respectful realistic portrait of a 64 year old Brazilian senior man in clean clinical hospital room with family photograph on nightstand and soft morning light"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDILW8__u79pMWeVA_pAWolRv-ULjPfK-giK5gHld6-uUPVIdh3ANjezkveUDR0MFUMXmbzarzQsHxM7Y2Wr98UNs87YiS_ifoDRd-a2QU3BiEgNMnenTc7iVuQqSzNmZ9dZiW9GslpLRJ1cNXT6m0bxS1-pXQOgdWX5eztMFq0ZeViiVx1h266gOD2t8HBaUexF4E7FTvOXT2ZNJbwGTIZV6Uf_1JZzpVjyn9XGza3" />
+                                <div class="space-y-0.5">
+                                    <h2
+                                        class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">
+                                        Sr. Cláudio Antunes, 64 anos
+                                    </h2>
+                                    <div
+                                        class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+                                        <span
+                                            class="material-symbols-outlined text-[16px] text-primary">local_hospital</span>
+                                        <span>Hospital São Paulo (UNIFESP)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Clinical Condition Callout -->
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm space-y-1">
+                                <div
+                                    class="font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-secondary">medical_services</span>
+                                    Quadro Clínico:
+                                </div>
+                                <p>Transplante hepático de doador cadáver em andamento. Protocolo cirúrgico exige
+                                    reserva preventiva de hemocomponentes.</p>
+                            </div>
+                            <!-- Blood Type Requirement Callout -->
+                            <div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+                                <div>
+                                    <span
+                                        class="block font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Tipo
+                                        Sanguíneo</span>
+                                    <span
+                                        class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">B-
+                                        (Negativo)</span>
+                                </div>
+                                <div
+                                    class="w-12 h-12 rounded-full bg-surface-container-highest text-on-surface font-headline-sm text-headline-sm font-black flex items-center justify-center shadow-inner">
+                                    B-
+                                </div>
+                            </div>
+                            <!-- Goal Fluid Progress Bar -->
+                            <div class="space-y-space-xs pt-space-xs">
+                                <div class="flex items-center justify-between font-label-sm text-label-sm">
+                                    <span class="font-bold text-on-surface">2 de 6 bolsas arrecadadas</span>
+                                    <span class="font-bold text-on-surface">33% da meta</span>
+                                </div>
+                                <div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden relative">
+                                    <div
+                                        class="h-full bg-primary rounded-full transition-all duration-700 w-[33%] relative">
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+                                    <span class="flex items-center gap-1 font-bold text-error">
+                                        <span class="material-symbols-outlined text-[14px]">hourglass_bottom</span>
+                                        Cirurgia agendada: 36h restantes
+                                    </span>
+                                    <span>Faltam 4 bolsas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Action CTAs -->
+                        <div class="pt-space-md space-y-space-xs mt-space-md">
+                            <a class="w-full py-space-sm px-space-md rounded-lg bg-surface-container text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-xs shadow-sm"
+                                data-path="agendar-doacao" href="#">
+                                <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                                <span>Agendar Doação Dirigida</span>
+                            </a>
+                            <button
+                                class="w-full py-space-xs px-space-md rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-xs"
+                                onclick="shareAppeal('Cláudio Antunes', 'B- Negativo', 'Hospital São Paulo UNIFESP')">
+                                <span class="material-symbols-outlined text-[18px]">share</span>
+                                <span>Compartilhar Pedido</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Live Urgent Geographic Heatmap Banner -->
+                <div
+                    class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col lg:flex-row items-center justify-between gap-space-lg">
+                    <div class="space-y-space-xs max-w-xl">
+                        <div class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-bold">
+                            <span class="material-symbols-outlined text-[18px]">hub</span>
+                            LOGÍSTICA DE DISTRIBUIÇÃO INSTANTÂNEA
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+                            Você mora próximo a um desses hospitais?
+                        </h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Doações dirigidas recebem senha preferencial na recepção dos hemocentros. Ao informar o ID
+                            do leito, sua bolsa é testada em regime prioritário de 4 horas.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-space-md w-full lg:w-auto">
+                        <div
+                            class="p-space-md rounded-lg bg-surface-container text-center flex-1 lg:flex-none min-w-[140px]">
+                            <span
+                                class="block font-metric-display text-metric-display text-primary font-black">4h</span>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">Tempo médio
+                                liberação</span>
+                        </div>
+                        <div
+                            class="p-space-md rounded-lg bg-surface-container text-center flex-1 lg:flex-none min-w-[140px]">
+                            <span
+                                class="block font-metric-display text-metric-display text-tertiary font-black">100%</span>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">Auditoria
+                                Hospitalar</span>
+                        </div>
+                        <a class="px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-dim font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-xs w-full sm:w-auto"
+                            data-path="hemocentros" href="#">
+                            <span class="material-symbols-outlined text-[18px]">location_on</span>
+                            <span>Ver Hemocentros Mais Próximos</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Hospital Verification & Anti-Fraud Guarantee Section -->
+                <div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-start">
+                        <div class="flex items-start gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[24px]">verified_user</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <h4 class="font-label-lg text-label-lg text-on-surface font-bold">
+                                    Auditoria Médica e CRM Válido
+                                </h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Todos os pedidos são auditados e validados pelo CRM do médico solicitante e cruzados
+                                    com o número de internação do hospital.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[24px]">lock</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <h4 class="font-label-lg text-label-lg text-on-surface font-bold">
+                                    Proteção de Dados & LGPD em Saúde
+                                </h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Informações sensíveis dos pacientes e prontuários são pseudonimizadas em
+                                    conformidade com as diretrizes do Ministério da Saúde.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[24px]">published_with_changes</span>
+                            </div>
+                            <div class="space-y-0.5">
+                                <h4 class="font-label-lg text-label-lg text-on-surface font-bold">
+                                    Baixa Automática de Metas
+                                </h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Assim que o leito cirúrgico atinge o volume seguro de bolsas, o apelo é encerrado
+                                    automaticamente para evitar desperdício de insumos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal: Criar Novo Pedido de Sangue (Interativo) -->
+            <div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/60 backdrop-blur-sm hidden"
+                id="appeal-modal">
+                <div
+                    class="bg-surface-container-lowest rounded-xl max-w-xl w-full p-space-lg shadow-2xl relative max-h-[921px] overflow-y-auto">
+                    <!-- Close Button -->
+                    <button
+                        class="absolute top-space-md right-space-md text-on-surface-variant hover:text-on-surface transition-colors"
+                        id="close-modal-btn">
+                        <span class="material-symbols-outlined text-[24px]">close</span>
+                    </button>
+                    <div class="space-y-space-md">
+                        <div class="space-y-1">
+                            <div
+                                class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-bold">
+                                <span class="material-symbols-outlined text-[16px]">emergency</span>
+                                SOLICITAÇÃO DE EMERGÊNCIA
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+                                Cadastrar Novo Pedido de Sangue
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Preencha os dados do paciente internado. A equipe técnica do HemoVida cruzará o número
+                                de prontuário com o sistema hospitalar antes de liberar no mural público.
+                            </p>
+                        </div>
+                        <form class="space-y-space-sm" id="appeal-form">
+                            <div>
+                                <label class="block font-label-sm text-label-sm text-on-surface font-bold mb-1">
+                                    Nome Completo do Paciente *
+                                </label>
+                                <input
+                                    class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                    placeholder="Ex: Mariana Albuquerque Santos" required="" type="text" />
+                            </div>
+                            <div class="grid grid-cols-2 gap-space-sm">
+                                <div>
+                                    <label class="block font-label-sm text-label-sm text-on-surface font-bold mb-1">
+                                        Idade *
+                                    </label>
+                                    <input
+                                        class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                        placeholder="Ex: 34" required="" type="number" />
+                                </div>
+                                <div>
+                                    <label class="block font-label-sm text-label-sm text-on-surface font-bold mb-1">
+                                        Tipo Sanguíneo Necessário *
+                                    </label>
+                                    <select
+                                        class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                        required="">
+                                        <option value="">Selecione o Tipo</option>
+                                        <option value="O-">O- Negativo (Prioritário)</option>
+                                        <option value="A-">A- Negativo</option>
+                                        <option value="B-">B- Negativo</option>
+                                        <option value="AB-">AB- Negativo</option>
+                                        <option value="O+">O+ Positivo</option>
+                                        <option value="A+">A+ Positivo</option>
+                                        <option value="B+">B+ Positivo</option>
+                                        <option value="AB+">AB+ Positivo</option>
+                                        <option value="PLAQUETAS">Plaquetas / Aférese</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-label-sm text-label-sm text-on-surface font-bold mb-1">
+                                    Hospital / Instituição de Internação *
+                                </label>
+                                <input
+                                    class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                    placeholder="Ex: Hospital Samaritano - Bloco Cirúrgico Central" required=""
+                                    type="text" />
+                            </div>
+                            <div class="grid grid-cols-2 gap-space-sm">
+                                <div>
+                                    <label class="block font-label-sm text-label-sm text-on-surface font-bold mb-1">
+                                        Nº Prontuário / Internação *
+                                    </label>
+                                    <input
+                                        class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                        placeholder="Ex: 2026-90812-H" required="" type="text" />
+                                </div>
+                                <div>
+                                    <label class="block font-label-sm text-label-sm text-on-surface font-bold mb-1">
+                                        CRM Médico Solicitante *
+                                    </label>
+                                    <input
+                                        class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                        placeholder="Ex: 148293-SP" required="" type="text" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-label-sm text-label-sm text-on-surface font-bold mb-1">
+                                    Motivo Clínico / Diagnóstico Resumido *
+                                </label>
+                                <textarea
+                                    class="w-full p-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"
+                                    placeholder="Ex: Politraumatismo decorrente de acidente rodoviário, transfusão maciça indicada."
+                                    required="" rows="2"></textarea>
+                            </div>
+                            <div
+                                class="p-space-sm rounded-lg bg-tertiary/10 text-on-surface flex items-start gap-space-xs font-body-sm text-body-sm">
+                                <span class="material-symbols-outlined text-[18px] text-tertiary shrink-0">info</span>
+                                <span>A verificação com a equipe de hemoterapia hospitalar leva aproximadamente 15 a 30
+                                    minutos antes do pedido entrar em circulação.</span>
+                            </div>
+                            <div class="pt-space-xs flex items-center justify-end gap-space-sm">
+                                <button
+                                    class="px-space-md py-space-sm rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors"
+                                    id="cancel-modal-btn" type="button">
+                                    Cancelar
+                                </button>
+                                <button
+                                    class="px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-md"
+                                    type="submit">
+                                    Enviar para Validação Médica
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Toast Notification -->
+            <div class="fixed bottom-6 right-6 z-50 max-w-md bg-surface-container-lowest text-on-surface p-space-md rounded-xl shadow-2xl flex items-center gap-space-sm transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none"
+                id="toast">
+                <div
+                    class="w-10 h-10 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[22px]">check_circle</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-label-md text-label-md font-bold" id="toast-title">Ação concluída</p>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant" id="toast-message">Detalhes da
+                        notificação.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Filter Tabs Micro-Interaction
+            const filterChips = document.querySelectorAll('.filter-chip');
+            const appealCards = document.querySelectorAll('.appeal-card');
+
+            filterChips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    filterChips.forEach(c => {
+                        c.classList.remove('bg-on-surface', 'text-surface');
+                        c.classList.add('bg-surface-container', 'text-on-surface-variant');
+                    });
+                    chip.classList.add('bg-on-surface', 'text-surface');
+                    chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+                    const filterVal = chip.getAttribute('data-filter');
+
+                    appealCards.forEach(card => {
+                        if (filterVal === 'all') {
+                            card.style.display = 'flex';
+                        } else if (filterVal === 'max') {
+                            card.style.display = card.getAttribute('data-urgency') === 'max' ? 'flex' : 'none';
+                        } else if (filterVal === 'platelets') {
+                            card.style.display = card.getAttribute('data-blood') === 'A-' ? 'flex' : 'none';
+                        } else {
+                            card.style.display = card.getAttribute('data-blood') === filterVal ? 'flex' : 'none';
+                        }
+                    });
+                });
+            });
+
+            // Modal Interactive Logic
+            const openModalBtn = document.getElementById('open-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const cancelModalBtn = document.getElementById('cancel-modal-btn');
+            const modal = document.getElementById('appeal-modal');
+            const appealForm = document.getElementById('appeal-form');
+
+            function openModal() {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            openModalBtn?.addEventListener('click', openModal);
+            closeModalBtn?.addEventListener('click', closeModal);
+            cancelModalBtn?.addEventListener('click', closeModal);
+
+            modal?.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            appealForm?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                closeModal();
+                showToast('Pedido Enviado com Sucesso', 'Nossa equipe médica cruzará o CRM com o prontuário em até 20 minutos.');
+                appealForm.reset();
+            });
+
+            // Share Functionality & Toast Notification
+            function shareAppeal(patientName, bloodType, hospital) {
+                const text = encodeURIComponent(`URGENTE: ${patientName} precisa de doação de sangue ${bloodType} no ${hospital}. Ajude ou compartilhe através do HemoVida!`);
+                const url = `https://api.whatsapp.com/send?text=${text}`;
+                window.open(url, '_blank');
+                showToast('Link do WhatsApp Aberto', 'Mensagem formatada com todos os dados clínicos de encaminhamento.');
+            }
+
+            function showToast(title, message) {
+                const toast = document.getElementById('toast');
+                const toastTitle = document.getElementById('toast-title');
+                const toastMessage = document.getElementById('toast-message');
+
+                if (!toast) return;
+
+                toastTitle.textContent = title;
+                toastMessage.textContent = message;
+
+                toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+                toast.classList.add('translate-y-0', 'opacity-100');
+
+                setTimeout(() => {
+                    toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                }, 4500);
+            }
+        </script>
+    </main>
+    <footer
+        class="w-full bg-surface-container-low text-on-surface-variant mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1440px] mx-auto px-margin py-space-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="space-y-space-sm">
+                <div class="flex items-center gap-space-xs"><img alt="HemoVida Logo" class="h-7 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" /><span
+                        class="font-headline-sm text-headline-sm text-primary font-bold">HemoVida</span></div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Rede inteligente de suporte à doação de
+                    sangue e gestão integrada de hemocentros clínicos, orientada pelo ODS 3 da ONU (Saúde e Bem-Estar -
+                    Metas 3.8 e 3.d).</p>
+                <div class="flex items-center gap-space-xs pt-space-xs"><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">ODS
+                        3 • Saúde</span><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">SUS
+                        Integrado</span></div>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Links Rápidos & Diretrizes</h4>
+                <ul class="space-y-space-xs font-body-sm text-body-sm">
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="posso-doar" href="#">Critérios de
+                            Doação de Sangue</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="guia-e-compatibilidade"
+                            href="#">Dúvidas Frequentes & Compatibilidade</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="hemocentros" href="#">Hospitais &
+                            Hemocentros Parceiros</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="admin-simulador" href="#">API
+                            Hemocentros & Integração RNDS</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" href="#">Privacidade de Dados & LGPD em
+                            Saúde</a></li>
+                </ul>
+            </div>
+            <div class="space-y-space-sm">
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Canais de Emergência & Apoio</h4>
+                <div
+                    class="p-space-sm rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.03)] space-y-space-xs">
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Disque Doação SUS</span><span
+                            class="font-headline-sm text-headline-sm font-bold text-primary">136</span></div>
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Central 24h</span><span
+                            class="font-label-md text-label-md font-bold text-on-surface">0800 700 VIDA</span></div>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container text-on-surface">
+                    <div class="flex items-center gap-space-xs"><span
+                            class="material-symbols-outlined text-tertiary">verified</span><span
+                            class="font-label-sm text-label-sm font-bold">Hackathon Evaluation Edition</span></div>
+                    <p class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Plataforma validada para
+                        auditoria operacional de estoques vitais e resposta rápida.</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-margin py-space-sm border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-xs text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 HemoVida. Desenvolvido para salvar
+                vidas com tecnologia humanizada.</p>
+            <div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span
+                    class="flex items-center gap-1"><span
+                        class="material-symbols-outlined text-[14px] text-tertiary">health_and_safety</span>
+                    Conformidade ANVISA RDC 34/2014</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>

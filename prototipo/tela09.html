@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#faf8ff", "secondary-fixed": "#ffdad6", "on-tertiary-fixed": "#002113", "on-surface-variant": "#5c403c", "inverse-primary": "#ffb4ab", "on-surface": "#131b2e", "on-secondary-container": "#690007", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#6ffbbe", "surface-container": "#eaedff", "primary-fixed-dim": "#ffb4ab", "error": "#ba1a1a", "primary-fixed": "#ffdad6", "on-background": "#131b2e", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "surface-tint": "#bf0715", "primary": "#b70011", "on-secondary-fixed-variant": "#8e1214", "on-primary-fixed-variant": "#93000b", "on-primary-fixed": "#410002", "primary-container": "#dc2626", "background": "#faf8ff", "on-primary-container": "#fff6f5", "surface-bright": "#faf8ff", "surface-variant": "#dae2fd", "surface-dim": "#d2d9f4", "on-primary": "#ffffff", "on-secondary-fixed": "#410002", "on-tertiary-container": "#e1ffec", "on-secondary": "#ffffff", "inverse-surface": "#283044", "tertiary-fixed-dim": "#4edea3", "outline": "#916f6b", "tertiary": "#006645", "secondary-container": "#ff665c", "inverse-on-surface": "#eef0ff", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb4ac", "surface-container-lowest": "#ffffff", "outline-variant": "#e6bdb8", "error-container": "#ffdad6", "secondary": "#b02d29", "on-tertiary-fixed-variant": "#005236", "tertiary-container": "#008259" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "margin": "2rem", "gutter": "1.5rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "metric-display": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-display": ["2.5rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-28 w-full max-w-[1440px] mx-auto px-margin flex flex-col justify-between py-space-xs">
+            <div class="flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-sm"><img alt="HemoVida Logo" class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" />
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-space-xs"><span
+                                class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">HemoVida</span><span
+                                class="px-space-xs py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">SUS
+                                Conectado • ODS 3</span></div><span
+                            class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Rede
+                            Inteligente de Hemocentros</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-error-container text-on-error-container">
+                        <span class="relative flex h-2.5 w-2.5"><span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span
+                                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span></span><span
+                            class="font-label-sm text-label-sm font-bold">SOS Sangue: O- e A- Críticos</span></div><a
+                        class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-space-xs shadow-[0_2px_8px_rgba(220,38,38,0.25)]"
+                        data-path="agendar-doacao" href="#"><span
+                            class="material-symbols-outlined text-[16px]">add</span><span>+ Agendar Agora</span></a>
+                    <div class="flex items-center gap-space-xs pl-space-sm"><img alt="Profile"
+                            class="w-8 h-8 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcSXqX3UdnH3VnFZypxyrvrpChSddo1pywZMeLSRXixiU6XEJnmIL7FRta_hVT17YqnDXb8faG3RUox5TwxF6dBgcm_iAhNKXAriJnxwDx2Dtsv6M7OKqnjCeSy9Q0-3Tm_y1CEci6QCR9etBU2PR_1_h_usomRebezGBadA_SQPBPA6zfDO75t1IunyeuApCKcZ-E2TRAhBz1t1ZPBEScSFuG12uxkFV0s7d6G7jl" />
+                        <div class="hidden md:flex flex-col text-left"><span
+                                class="font-label-sm text-label-sm font-bold text-on-surface leading-tight">Gustavo
+                                T.</span><span
+                                class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">O-
+                                Doador Universal</span></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex items-center gap-space-xs overflow-x-auto pb-1"
+                data-active-classes="bg-surface-container text-primary font-bold rounded-lg"><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="home" href="#">Início</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="estoque-em-tempo-real" href="#">Estoque em Tempo Real</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="posso-doar" href="#">Posso Doar? (Triagem)</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="hemocentros" href="#">Hemocentros</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Doação</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="carteirinha-digital" href="#">Carteirinha Digital</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="conquistas" href="#">Conquistas</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="pedidos-urgentes" href="#">Pedidos Urgentes</a><a
+                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors whitespace-nowrap"
+                    data-path="guia-e-compatibilidade" href="#">Guia & Compatibilidade</a><a aria-current="page"
+                    class="px-space-sm py-1 transition-colors whitespace-nowrap bg-surface-container text-primary font-bold rounded-lg"
+                    data-path="admin-simulador" href="#">Admin / Simulador</a></nav>
+        </div>
+        <div class="w-full bg-error-container text-on-error-container py-1.5 px-margin">
+            <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-space-sm text-center md:text-left">
+                <div class="flex items-center gap-space-xs mx-auto md:mx-0"><span
+                        class="material-symbols-outlined text-[18px] text-primary animate-pulse">warning</span>
+                    <p class="font-label-sm text-label-sm"><span class="font-bold">Alerta Rede Hemominas & Grande
+                            SP:</span> Reservas de O- estão em 18% da capacidade ideal. Doadores O- e A-, agendem sua
+                        doação.</p>
+                </div><a
+                    class="hidden lg:inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary hover:underline whitespace-nowrap"
+                    data-path="agendar-doacao" href="#">Agendar Prioridade <span
+                        class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-28 bg-surface">
+        <div class="flex flex-col w-full">
+            <div class="max-w-[1440px] w-full mx-auto px-margin py-space-xl space-y-space-xl">
+                <!-- Top System Diagnostic Bar -->
+                <div
+                    class="w-full bg-surface-container rounded-2xl p-space-md sm:p-space-lg shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+                    <div class="space-y-space-xs max-w-3xl">
+                        <div class="flex flex-wrap items-center gap-space-xs">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider">
+                                <span class="material-symbols-outlined text-[14px]">tune</span>
+                                Ambiente Avaliativo RNDS / SUS
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">
+                                <span class="h-2 w-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+                                Modo Hackathon: Ativo
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                                <span class="material-symbols-outlined text-[14px] text-tertiary">speed</span>
+                                Latência do Barramento: 24ms
+                            </span>
+                        </div>
+                        <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-extrabold">
+                            Simulador de Gestão Hospitalar & Auditoria em Tempo Real
+                        </h1>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Console interativo para operadores de hemocentros clínicos e avaliadores do comitê testarem
+                            a reatividade dos modelos preditivos, automação de estoque e disparos de alerta
+                            geolocalizados.
+                        </p>
+                    </div>
+                    <!-- Live Heartbeat Card -->
+                    <div
+                        class="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-space-sm w-full lg:w-auto shrink-0 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+                        <div class="flex items-center gap-space-xs">
+                            <span class="relative flex h-3 w-3">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary"></span>
+                            </span>
+                            <span class="font-label-lg text-label-lg text-on-surface">Cluster Redundante SP-01</span>
+                        </div>
+                        <div class="text-left lg:text-right">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant block">Última Sincronização
+                                SUS</span>
+                            <span class="font-label-md text-label-md text-primary font-bold" id="sync-timestamp">Hoje,
+                                14:32:08 (há 3s)</span>
+                        </div>
+                        <button
+                            class="w-full sm:w-auto px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1"
+                            id="manual-sync-btn">
+                            <span class="material-symbols-outlined text-[16px]">sync</span>
+                            Forçar Snapshot
+                        </button>
+                    </div>
+                </div>
+                <!-- Quick Emergency Action Triggers -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                    <!-- Action 1: Red Alert Broadcast -->
+                    <div
+                        class="bg-gradient-to-br from-error-container to-surface-container-low rounded-2xl p-space-lg shadow-md flex flex-col justify-between gap-space-md relative overflow-hidden group">
+                        <div
+                            class="absolute -right-6 -bottom-6 opacity-10 group-hover:scale-110 transition-transform duration-500 pointer-events-none">
+                            <span class="material-symbols-outlined text-[140px] text-error">campaign</span>
+                        </div>
+                        <div class="space-y-space-xs relative z-10">
+                            <div class="flex items-center gap-space-xs">
+                                <span
+                                    class="p-2 rounded-xl bg-error text-on-error flex items-center justify-center shadow-sm">
+                                    <span
+                                        class="material-symbols-outlined text-[20px] animate-pulse">crisis_alert</span>
+                                </span>
+                                <span
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">Disparo
+                                    Urgente</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-error-container font-bold">
+                                Disparar Alerta Vermelho SOS
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Emite notificação imediata via Push, WhatsApp e SMS para <span
+                                    class="font-bold text-on-surface">12.000 doadores</span> de tipos sanguíneos
+                                compatíveis com os níveis críticos.
+                            </p>
+                        </div>
+                        <button
+                            class="w-full py-3 px-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-on-primary-fixed-variant transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 relative z-10 active:scale-[0.98]"
+                            id="btn-broadcast-alert">
+                            <span class="material-symbols-outlined text-[20px]">send_time_extension</span>
+                            <span>Disparar Alerta Vermelho</span>
+                        </button>
+                    </div>
+                    <!-- Action 2: Urgent Patient Admission -->
+                    <div
+                        class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md relative overflow-hidden group hover:shadow-md transition-shadow">
+                        <div class="space-y-space-xs">
+                            <div class="flex items-center gap-space-xs">
+                                <span
+                                    class="p-2 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px]">medical_services</span>
+                                </span>
+                                <span
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Transfusão
+                                    Prioritária</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                                Lançar Pedido Urgente de Paciente
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Insere requisição médica emergencial na fila cirúrgica, rebalanceando a previsão de
+                                bolsas e gerando chamada nominal instantânea.
+                            </p>
+                        </div>
+                        <button
+                            class="w-full py-3 px-space-md rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2"
+                            id="btn-open-patient-modal">
+                            <span class="material-symbols-outlined text-[20px]">person_add</span>
+                            <span>+ Cadastrar Paciente na Fila</span>
+                        </button>
+                    </div>
+                    <!-- Action 3: Reset Demo State -->
+                    <div
+                        class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md relative overflow-hidden group hover:shadow-md transition-shadow">
+                        <div class="space-y-space-xs">
+                            <div class="flex items-center gap-space-xs">
+                                <span
+                                    class="p-2 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px]">restart_alt</span>
+                                </span>
+                                <span
+                                    class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">Estado
+                                    do Pitch</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                                Resetar Valores de Demonstração
+                            </h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Restaura os percentuais originais pré-definidos para a banca de jurados (O- em 18%, A-
+                                em 22% e B- em 27%).
+                            </p>
+                        </div>
+                        <button
+                            class="w-full py-3 px-space-md rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg flex items-center justify-center gap-2"
+                            id="btn-reset-simulator">
+                            <span class="material-symbols-outlined text-[20px]">history</span>
+                            <span>Restaurar Baseline Inicial</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Active Real-Time Blood Matrix Simulation Controls -->
+                <div class="space-y-space-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+                        <div>
+                            <h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+                                Matriz de Estoque Vital Simulada (8 Tipos Sanguíneos)
+                            </h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Ajuste os controles deslizantes ou use os seletores numéricos para testar a
+                                sensibilidade da IA de despacho logístico em tempo real.
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-xs self-start sm:self-auto">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">Legenda:</span>
+                            <span
+                                class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] font-bold">
+                                < 30% Crítico</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[11px] font-bold">30%-60%
+                                        Alerta</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded-full bg-tertiary/15 text-tertiary font-label-sm text-[11px] font-bold">>
+                                        60% Seguro</span>
+                        </div>
+                    </div>
+                    <!-- 8 Blood Types Sliders Bento Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md" id="stock-grid">
+                        <!-- Card: O- (Initial 18%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="O-" data-capacity="600" data-percent="18">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-black flex items-center justify-center shadow-sm">
+                                        O-
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Doador
+                                            Universal</span>
+                                        <span
+                                            class="font-label-sm text-[11px] text-primary font-extrabold flex items-center gap-0.5">
+                                            <span class="material-symbols-outlined text-[12px]">priority_high</span>
+                                            Alta Prioridade
+                                        </span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-error-container text-on-error-container">
+                                    Crítico
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-primary">18%</span>
+                                </div>
+                                <!-- Slider Element -->
+                                <input
+                                    class="blood-slider w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="18" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">108
+                                        / 600 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <!-- Calculated Impact Panel -->
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-error">1.4
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span class="surgery-val font-label-sm text-label-sm font-bold text-error">9
+                                        cirurgias em risco</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: A- (Initial 22%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="A-" data-capacity="450" data-percent="22">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-secondary text-on-secondary font-headline-sm text-headline-sm font-black flex items-center justify-center shadow-sm">
+                                        A-
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Grupo
+                                            Raro</span>
+                                        <span
+                                            class="font-label-sm text-[11px] text-error font-extrabold flex items-center gap-0.5">
+                                            <span class="material-symbols-outlined text-[12px]">warning</span> Déficit
+                                            Elevado
+                                        </span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-error-container text-on-error-container">
+                                    Crítico
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-primary">22%</span>
+                                </div>
+                                <input
+                                    class="blood-slider w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="22" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">99
+                                        / 450 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-error">2.1
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span class="surgery-val font-label-sm text-label-sm font-bold text-error">5
+                                        cirurgias em risco</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: B- (Initial 27%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="B-" data-capacity="350" data-percent="27">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-secondary text-on-secondary font-headline-sm text-headline-sm font-black flex items-center justify-center shadow-sm">
+                                        B-
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Grupo
+                                            Raro</span>
+                                        <span
+                                            class="font-label-sm text-[11px] text-error font-extrabold flex items-center gap-0.5">
+                                            <span class="material-symbols-outlined text-[12px]">schedule</span> Fim do
+                                            Estoque
+                                        </span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-error-container text-on-error-container">
+                                    Crítico
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-primary">27%</span>
+                                </div>
+                                <input
+                                    class="blood-slider w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="27" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">94
+                                        / 350 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-error">2.8
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span class="surgery-val font-label-sm text-label-sm font-bold text-error">3
+                                        cirurgias em risco</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: O+ (Initial 42%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="O+" data-capacity="1200" data-percent="42">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm font-black flex items-center justify-center">
+                                        O+
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Maior
+                                            Demanda</span>
+                                        <span class="font-label-sm text-[11px] text-on-surface-variant font-medium">36%
+                                            da População</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed-variant">
+                                    Alerta
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-secondary">42%</span>
+                                </div>
+                                <input
+                                    class="blood-slider w-full accent-secondary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="42" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">504
+                                        / 1200 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-on-surface">4.5
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span class="surgery-val font-label-sm text-label-sm font-bold text-on-surface">Sob
+                                        vigilância</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: A+ (Initial 49%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="A+" data-capacity="900" data-percent="49">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm font-black flex items-center justify-center">
+                                        A+
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Alta
+                                            Rotatividade</span>
+                                        <span class="font-label-sm text-[11px] text-on-surface-variant font-medium">34%
+                                            da População</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed-variant">
+                                    Alerta
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-secondary">49%</span>
+                                </div>
+                                <input
+                                    class="blood-slider w-full accent-secondary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="49" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">441
+                                        / 900 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-on-surface">5.2
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span
+                                        class="surgery-val font-label-sm text-label-sm font-bold text-on-surface">Estável</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: B+ (Initial 74%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="B+" data-capacity="500" data-percent="74">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm font-black flex items-center justify-center">
+                                        B+
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Estoque
+                                            Regular</span>
+                                        <span class="font-label-sm text-[11px] text-tertiary font-bold">Consumo
+                                            Previsto</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-tertiary/15 text-tertiary">
+                                    Adequado
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-tertiary">74%</span>
+                                </div>
+                                <input
+                                    class="blood-slider w-full accent-tertiary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="74" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">370
+                                        / 500 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-tertiary">9.8
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span class="surgery-val font-label-sm text-label-sm font-bold text-tertiary">Sem
+                                        pendências</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: AB+ (Initial 88%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="AB+" data-capacity="300" data-percent="88">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm font-black flex items-center justify-center">
+                                        AB+
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Receptor
+                                            Universal</span>
+                                        <span class="font-label-sm text-[11px] text-tertiary font-bold">Autonomia
+                                            Alta</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-tertiary/15 text-tertiary">
+                                    Adequado
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-tertiary">88%</span>
+                                </div>
+                                <input
+                                    class="blood-slider w-full accent-tertiary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="88" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">264
+                                        / 300 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-tertiary">14.2
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span class="surgery-val font-label-sm text-label-sm font-bold text-tertiary">Pleno
+                                        conforto</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: AB- (Initial 65%) -->
+                        <div class="stock-card bg-surface-container-lowest rounded-2xl p-space-md shadow-sm space-y-space-md transition-all duration-300"
+                            data-blood="AB-" data-capacity="200" data-percent="65">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="h-10 w-10 rounded-full bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm font-black flex items-center justify-center">
+                                        AB-
+                                    </span>
+                                    <div>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold block">Grupo
+                                            Raro</span>
+                                        <span class="font-label-sm text-[11px] text-tertiary font-bold">1% da
+                                            População</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-tertiary/15 text-tertiary">
+                                    Adequado
+                                </span>
+                            </div>
+                            <div class="space-y-space-xs">
+                                <div class="flex items-baseline justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Nível de
+                                        Reserva</span>
+                                    <span
+                                        class="percent-display font-metric-display text-headline-md font-black text-tertiary">65%</span>
+                                </div>
+                                <input
+                                    class="blood-slider w-full accent-tertiary h-2 bg-surface-container rounded-lg cursor-pointer"
+                                    max="100" min="0" type="range" value="65" />
+                                <div class="flex items-center justify-between pt-1">
+                                    <button
+                                        class="step-down px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">-5%</button>
+                                    <span
+                                        class="capacity-ratio font-label-sm text-label-sm text-on-surface-variant font-mono">130
+                                        / 200 bolsas</span>
+                                    <button
+                                        class="step-up px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">+5%</button>
+                                </div>
+                            </div>
+                            <div class="bg-surface-container rounded-xl p-space-xs space-y-1 font-body-sm text-body-sm">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Autonomia:</span>
+                                    <span class="autonomy-val font-label-sm text-label-sm font-bold text-tertiary">8.4
+                                        dias</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-on-surface-variant">Impacto Cirúrgico:</span>
+                                    <span
+                                        class="surgery-val font-label-sm text-label-sm font-bold text-tertiary">Garantido</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Live Simulation Telemetry & Analytics Dashboard -->
+                <div class="space-y-space-md">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+                                Telemetria Operacional & Impacto Clínico (ODS 3)
+                            </h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Métricas de eficiência em tempo de resposta e economia de recursos no ecossistema do
+                                hemocentro.
+                            </p>
+                        </div>
+                        <span
+                            class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                            <span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+                            Auditoria SUS RNDS Ativa
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                        <!-- Metric 1 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm space-y-space-xs relative overflow-hidden">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Conversão
+                                    de Convocação</span>
+                                <span
+                                    class="p-1.5 rounded-lg bg-surface-container text-tertiary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[18px]">trending_up</span>
+                                </span>
+                            </div>
+                            <div class="flex items-baseline gap-space-xs pt-1">
+                                <span class="font-metric-display text-headline-xl font-black text-on-surface"
+                                    id="metric-conversion">68.4%</span>
+                                <span class="font-label-sm text-label-sm font-bold text-tertiary flex items-center">
+                                    <span class="material-symbols-outlined text-[14px]">arrow_upward</span> +14.2%
+                                </span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Adesão em até 24h após alerta geolocalizado vs média nacional de 23%.
+                            </p>
+                            <div class="w-full bg-surface-container rounded-full h-1.5 mt-2">
+                                <div class="bg-tertiary h-1.5 rounded-full" style="width: 68.4%"></div>
+                            </div>
+                        </div>
+                        <!-- Metric 2 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm space-y-space-xs relative overflow-hidden">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Agendamentos
+                                    Para Hoje</span>
+                                <span
+                                    class="p-1.5 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[18px]">event_available</span>
+                                </span>
+                            </div>
+                            <div class="flex items-baseline gap-space-xs pt-1">
+                                <span class="font-metric-display text-headline-xl font-black text-primary"
+                                    id="metric-appointments">142</span>
+                                <span class="font-label-sm text-label-sm font-bold text-tertiary flex items-center">
+                                    <span class="material-symbols-outlined text-[14px]">check_circle</span> 100%
+                                    Capacidade
+                                </span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Doadores confirmados nos 6 slots horários de aférese e sangue total.
+                            </p>
+                            <div class="flex items-center gap-1 pt-1 font-label-sm text-[11px] text-on-surface-variant">
+                                <span class="h-2 w-2 rounded-full bg-tertiary"></span> 96 no turno da manhã • 46 tarde
+                            </div>
+                        </div>
+                        <!-- Metric 3 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm space-y-space-xs relative overflow-hidden">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Tempo
+                                    Médio na Unidade</span>
+                                <span
+                                    class="p-1.5 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[18px]">timelapse</span>
+                                </span>
+                            </div>
+                            <div class="flex items-baseline gap-space-xs pt-1">
+                                <span class="font-metric-display text-headline-xl font-black text-on-surface"
+                                    id="metric-time">28 min</span>
+                                <span class="font-label-sm text-label-sm font-bold text-tertiary flex items-center">
+                                    <span class="material-symbols-outlined text-[14px]">arrow_downward</span> -62%
+                                </span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Reduzido de 75 min com triagem digital prévia e check-in via QR Code.
+                            </p>
+                            <div class="w-full bg-surface-container rounded-full h-1.5 mt-2">
+                                <div class="bg-primary h-1.5 rounded-full" style="width: 37%"></div>
+                            </div>
+                        </div>
+                        <!-- Metric 4 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm space-y-space-xs relative overflow-hidden">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Desperdício
+                                    por Validade</span>
+                                <span
+                                    class="p-1.5 rounded-lg bg-surface-container text-tertiary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[18px]">recycling</span>
+                                </span>
+                            </div>
+                            <div class="flex items-baseline gap-space-xs pt-1">
+                                <span class="font-metric-display text-headline-xl font-black text-tertiary"
+                                    id="metric-waste">0.2%</span>
+                                <span class="font-label-sm text-label-sm font-bold text-on-surface-variant">/ mês</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Meta ODS 3.8 cumprida com redistribuição cruzada entre hospitais.
+                            </p>
+                            <div class="w-full bg-surface-container rounded-full h-1.5 mt-2">
+                                <div class="bg-tertiary-fixed-dim h-1.5 rounded-full" style="width: 2%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Live Event Log & Diagnostic Terminal -->
+                <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm space-y-space-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+                        <div class="flex items-center gap-space-xs">
+                            <span class="material-symbols-outlined text-primary text-[24px]">terminal</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                                Console de Eventos da Rede de Hemocentros (Log Auditável)
+                            </h3>
+                        </div>
+                        <div class="flex items-center gap-space-xs">
+                            <button
+                                class="px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm transition-colors"
+                                id="clear-log-btn">
+                                Limpar Console
+                            </button>
+                            <span
+                                class="px-space-xs py-0.5 rounded bg-tertiary/10 text-tertiary font-mono text-[11px] font-bold">
+                                STREAM ATIVO
+                            </span>
+                        </div>
+                    </div>
+                    <div class="bg-on-surface text-surface rounded-xl p-space-md font-mono text-body-sm space-y-2 max-h-64 overflow-y-auto shadow-inner"
+                        id="terminal-logs">
+                        <div class="flex items-start gap-2 text-tertiary-fixed">
+                            <span class="text-outline-variant shrink-0">[14:32:04]</span>
+                            <span class="font-bold shrink-0">[KERNEL]</span>
+                            <span>Rede Hemominas sincronizada com barramento central DATASUS (200 OK).</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-inverse-primary">
+                            <span class="text-outline-variant shrink-0">[14:32:01]</span>
+                            <span class="font-bold shrink-0">[ALERTA]</span>
+                            <span>Reserva O- atingiu patamar crítico (18%). Algoritmo ativou gatilho de prioridade de
+                                convocação.</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-surface-container-highest">
+                            <span class="text-outline-variant shrink-0">[14:31:45]</span>
+                            <span class="font-bold shrink-0">[DOADOR]</span>
+                            <span>Gustavo T. (O-) efetuou check-in presencial no Hemocentro Central via Carteirinha
+                                Digital.</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-tertiary-fixed">
+                            <span class="text-outline-variant shrink-0">[14:30:12]</span>
+                            <span class="font-bold shrink-0">[ROTA]</span>
+                            <span>Remessa emergencial #HM-942 despachada via van refrigerada para Hospital das Clínicas
+                                (4 bolsas A-).</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Urgent Patient Admission -->
+                <div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden items-center justify-center p-margin"
+                    id="patient-modal">
+                    <div
+                        class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-lg shadow-xl space-y-space-md relative animate-in fade-in zoom-in-95 duration-200">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-space-xs">
+                                <span class="p-2 rounded-xl bg-error-container text-on-error-container">
+                                    <span class="material-symbols-outlined text-[20px]">emergency</span>
+                                </span>
+                                <div>
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Cadastro de
+                                        Pedido Urgente</h3>
+                                    <p class="font-label-sm text-label-sm text-on-surface-variant">Transfusão sob
+                                        Demanda Crítica</p>
+                                </div>
+                            </div>
+                            <button
+                                class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"
+                                id="close-patient-modal">
+                                <span class="material-symbols-outlined text-[20px]">close</span>
+                            </button>
+                        </div>
+                        <form class="space-y-space-sm font-body-sm text-body-sm" id="urgent-patient-form">
+                            <div>
+                                <label class="font-label-sm text-label-sm text-on-surface block mb-1">Nome do Paciente /
+                                    ID Clínico</label>
+                                <input
+                                    class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface focus:outline-none focus:ring-2 focus:ring-primary"
+                                    id="patient-name" placeholder="Ex.: Lucas M. de Albuquerque (Leito 14 UTI)"
+                                    required="" type="text" />
+                            </div>
+                            <div class="grid grid-cols-2 gap-space-sm">
+                                <div>
+                                    <label class="font-label-sm text-label-sm text-on-surface block mb-1">Tipo Sanguíneo
+                                        Necessário</label>
+                                    <select
+                                        class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-bold"
+                                        id="patient-blood">
+                                        <option value="O-">O Negativo (O-)</option>
+                                        <option value="A-">A Negativo (A-)</option>
+                                        <option value="B-">B Negativo (B-)</option>
+                                        <option value="O+">O Positivo (O+)</option>
+                                        <option value="A+">A Positivo (A+)</option>
+                                        <option value="B+">B Positivo (B+)</option>
+                                        <option value="AB-">AB Negativo (AB-)</option>
+                                        <option value="AB+">AB Positivo (AB+)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="font-label-sm text-label-sm text-on-surface block mb-1">Bolsas
+                                        Solicitadas</label>
+                                    <input
+                                        class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-bold"
+                                        id="patient-bags" max="10" min="1" required="" type="number" value="3" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="font-label-sm text-label-sm text-on-surface block mb-1">Hospital
+                                    Requisitante</label>
+                                <input
+                                    class="w-full px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface focus:outline-none focus:ring-2 focus:ring-primary"
+                                    id="patient-hospital" placeholder="Ex.: Hospital das Clínicas - Bloco Cirúrgico 2"
+                                    required="" type="text" />
+                            </div>
+                            <div>
+                                <label class="font-label-sm text-label-sm text-on-surface block mb-1">Prioridade
+                                    Clínica</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <label
+                                        class="flex items-center gap-2 p-2 rounded-xl bg-surface-container cursor-pointer hover:bg-surface-container-high">
+                                        <input checked="" class="accent-primary" name="priority" type="radio"
+                                            value="Emergência (Imediato)" />
+                                        <span class="font-label-sm text-label-sm font-bold text-error">Imediato</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-2 p-2 rounded-xl bg-surface-container cursor-pointer hover:bg-surface-container-high">
+                                        <input class="accent-primary" name="priority" type="radio"
+                                            value="Urgência (2h)" />
+                                        <span class="font-label-sm text-label-sm text-secondary">Até 2h</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-2 p-2 rounded-xl bg-surface-container cursor-pointer hover:bg-surface-container-high">
+                                        <input class="accent-primary" name="priority" type="radio"
+                                            value="Programado (Hoje)" />
+                                        <span class="font-label-sm text-label-sm text-on-surface">Até 12h</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pt-space-xs flex items-center justify-end gap-space-xs">
+                                <button
+                                    class="px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors"
+                                    id="cancel-patient-btn" type="button">
+                                    Cancelar
+                                </button>
+                                <button
+                                    class="px-space-md py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-1 shadow-md"
+                                    type="submit">
+                                    <span class="material-symbols-outlined text-[16px]">priority_high</span> Confirmar e
+                                    Alocar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Notification Toast Element -->
+                <div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-space-xs"
+                    id="toast">
+                    <span class="material-symbols-outlined text-[20px] text-tertiary-fixed"
+                        id="toast-icon">check_circle</span>
+                    <span class="font-label-md text-label-md" id="toast-message">Ação executada com sucesso.</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function () {
+                // Initial benchmark values
+                const INITIAL_DATA = {
+                    'O-': 18,
+                    'A-': 22,
+                    'B-': 27,
+                    'O+': 42,
+                    'A+': 49,
+                    'B+': 74,
+                    'AB+': 88,
+                    'AB-': 65
+                };
+
+                const cards = document.querySelectorAll('.stock-card');
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toast-message');
+                const toastIcon = document.getElementById('toast-icon');
+                const terminal = document.getElementById('terminal-logs');
+
+                function showToast(message, isError = false) {
+                    toastMsg.textContent = message;
+                    toastIcon.textContent = isError ? 'error' : 'check_circle';
+                    toastIcon.className = 'material-symbols-outlined text-[20px] ' + (isError ? 'text-inverse-primary' : 'text-tertiary-fixed');
+                    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+                    setTimeout(() => {
+                        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+                    }, 3500);
+                }
+
+                function addLog(tag, message, colorClass = 'text-surface-container-highest') {
+                    const now = new Date();
+                    const timeStr = now.toTimeString().split(' ')[0];
+                    const logDiv = document.createElement('div');
+                    logDiv.className = 'flex items-start gap-2 ' + colorClass;
+                    logDiv.innerHTML = '<span class="text-outline-variant shrink-0">[' + timeStr + ']</span>' +
+                        '<span class="font-bold shrink-0">[' + tag + ']</span>' +
+                        '<span>' + message + '</span>';
+                    terminal.insertBefore(logDiv, terminal.firstChild);
+                }
+
+                function updateCardVisuals(card, percent) {
+                    const capacity = parseInt(card.dataset.capacity, 10);
+                    const bloodType = card.dataset.blood;
+                    const bags = Math.round((percent / 100) * capacity);
+
+                    const percentDisplay = card.querySelector('.percent-display');
+                    const capacityRatio = card.querySelector('.capacity-ratio');
+                    const statusBadge = card.querySelector('.status-badge');
+                    const slider = card.querySelector('.blood-slider');
+                    const autonomy = card.querySelector('.autonomy-val');
+                    const surgery = card.querySelector('.surgery-val');
+
+                    slider.value = percent;
+                    percentDisplay.textContent = percent + '%';
+                    capacityRatio.textContent = bags + ' / ' + capacity + ' bolsas';
+
+                    // Re-calculate estimated days
+                    const days = (percent / 10).toFixed(1);
+
+                    if (percent < 30) {
+                        statusBadge.textContent = 'Crítico';
+                        statusBadge.className = 'status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-error-container text-on-error-container';
+                        percentDisplay.className = 'percent-display font-metric-display text-headline-md font-black text-primary';
+                        slider.className = 'blood-slider w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer';
+                        autonomy.textContent = days + ' dias';
+                        autonomy.className = 'autonomy-val font-label-sm text-label-sm font-bold text-error';
+                        const surgeriesRisk = Math.max(1, Math.round((30 - percent) / 2));
+                        surgery.textContent = surgeriesRisk + ' cirurgias em risco';
+                        surgery.className = 'surgery-val font-label-sm text-label-sm font-bold text-error';
+                    } else if (percent <= 60) {
+                        statusBadge.textContent = 'Alerta';
+                        statusBadge.className = 'status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-secondary-fixed text-on-secondary-fixed-variant';
+                        percentDisplay.className = 'percent-display font-metric-display text-headline-md font-black text-secondary';
+                        slider.className = 'blood-slider w-full accent-secondary h-2 bg-surface-container rounded-lg cursor-pointer';
+                        autonomy.textContent = days + ' dias';
+                        autonomy.className = 'autonomy-val font-label-sm text-label-sm font-bold text-on-surface';
+                        surgery.textContent = 'Monitoramento ativo';
+                        surgery.className = 'surgery-val font-label-sm text-label-sm font-bold text-on-surface';
+                    } else {
+                        statusBadge.textContent = 'Adequado';
+                        statusBadge.className = 'status-badge px-space-xs py-1 rounded-full font-label-sm text-label-sm font-bold bg-tertiary/15 text-tertiary';
+                        percentDisplay.className = 'percent-display font-metric-display text-headline-md font-black text-tertiary';
+                        slider.className = 'blood-slider w-full accent-tertiary h-2 bg-surface-container rounded-lg cursor-pointer';
+                        autonomy.textContent = days + ' dias';
+                        autonomy.className = 'autonomy-val font-label-sm text-label-sm font-bold text-tertiary';
+                        surgery.textContent = 'Sem pendências';
+                        surgery.className = 'surgery-val font-label-sm text-label-sm font-bold text-tertiary';
+                    }
+                }
+
+                // Bind sliders and step controls
+                cards.forEach(card => {
+                    const slider = card.querySelector('.blood-slider');
+                    const stepDown = card.querySelector('.step-down');
+                    const stepUp = card.querySelector('.step-up');
+                    const bloodType = card.dataset.blood;
+
+                    slider.addEventListener('input', (e) => {
+                        const val = parseInt(e.target.value, 10);
+                        card.dataset.percent = val;
+                        updateCardVisuals(card, val);
+                    });
+
+                    slider.addEventListener('change', (e) => {
+                        addLog('ESTOQUE', 'Ajuste manual de estoque ' + bloodType + ' alterado para ' + e.target.value + '%.');
+                    });
+
+                    stepDown.addEventListener('click', () => {
+                        let val = Math.max(0, parseInt(slider.value, 10) - 5);
+                        card.dataset.percent = val;
+                        updateCardVisuals(card, val);
+                        addLog('SIMULADOR', 'Decréscimo de 5% aplicado no tipo ' + bloodType + ' (Agora: ' + val + '%).');
+                    });
+
+                    stepUp.addEventListener('click', () => {
+                        let val = Math.min(100, parseInt(slider.value, 10) + 5);
+                        card.dataset.percent = val;
+                        updateCardVisuals(card, val);
+                        addLog('SIMULADOR', 'Acréscimo de 5% aplicado no tipo ' + bloodType + ' (Agora: ' + val + '%).');
+                    });
+                });
+
+                // Reset button
+                const resetBtn = document.getElementById('btn-reset-simulator');
+                resetBtn.addEventListener('click', () => {
+                    cards.forEach(card => {
+                        const blood = card.dataset.blood;
+                        const initialVal = INITIAL_DATA[blood];
+                        card.dataset.percent = initialVal;
+                        updateCardVisuals(card, initialVal);
+                    });
+                    addLog('RESET', 'Valores do benchmark restaurados com sucesso para o roteiro de avaliação.', 'text-tertiary-fixed');
+                    showToast('Parâmetros padrão do pitch restaurados!');
+                });
+
+                // Red Alert Broadcast Simulation
+                const broadcastBtn = document.getElementById('btn-broadcast-alert');
+                broadcastBtn.addEventListener('click', () => {
+                    broadcastBtn.disabled = true;
+                    broadcastBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Disparando Convocação...';
+
+                    setTimeout(() => {
+                        broadcastBtn.disabled = false;
+                        broadcastBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">send_time_extension</span><span>Disparar Alerta Vermelho</span>';
+                        addLog('BROADCAST', 'Alerta SOS disparado para 12.000 doadores (O-, A-, B-). Conexão RNDS confirmou 8.420 aberturas de Push.', 'text-inverse-primary');
+                        showToast('🚨 SOS Disparado! 12.000 doadores notificados via SMS/WhatsApp.');
+                    }, 1000);
+                });
+
+                // Patient Modal Handling
+                const patientModal = document.getElementById('patient-modal');
+                const openPatientModalBtn = document.getElementById('btn-open-patient-modal');
+                const closePatientModalBtn = document.getElementById('close-patient-modal');
+                const cancelPatientBtn = document.getElementById('cancel-patient-btn');
+                const patientForm = document.getElementById('urgent-patient-form');
+
+                function toggleModal(show) {
+                    if (show) {
+                        patientModal.classList.remove('hidden');
+                        patientModal.classList.add('flex');
+                    } else {
+                        patientModal.classList.add('hidden');
+                        patientModal.classList.remove('flex');
+                    }
+                }
+
+                openPatientModalBtn.addEventListener('click', () => toggleModal(true));
+                closePatientModalBtn.addEventListener('click', () => toggleModal(false));
+                cancelPatientBtn.addEventListener('click', () => toggleModal(false));
+
+                patientForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('patient-name').value;
+                    const blood = document.getElementById('patient-blood').value;
+                    const bags = parseInt(document.getElementById('patient-bags').value, 10);
+                    const hospital = document.getElementById('patient-hospital').value;
+                    const priority = document.querySelector('input[name="priority"]:checked').value;
+
+                    // Deduct from matching stock card
+                    const targetCard = Array.from(cards).find(c => c.dataset.blood === blood);
+                    if (targetCard) {
+                        const capacity = parseInt(targetCard.dataset.capacity, 10);
+                        let curPercent = parseInt(targetCard.dataset.percent, 10);
+                        const bagsPercent = Math.max(1, Math.round((bags / capacity) * 100));
+                        const newPercent = Math.max(0, curPercent - bagsPercent);
+                        targetCard.dataset.percent = newPercent;
+                        updateCardVisuals(targetCard, newPercent);
+                    }
+
+                    addLog('TRANSFUSÃO', 'Pedido prioritário incluído: ' + name + ' (' + bags + ' bolsas ' + blood + ') - ' + hospital + ' [' + priority + '].', 'text-inverse-primary');
+                    toggleModal(false);
+                    patientForm.reset();
+                    showToast('Paciente ' + name + ' cadastrado! Estoque de ' + blood + ' atualizado.');
+                });
+
+                // Clear logs
+                const clearLogBtn = document.getElementById('clear-log-btn');
+                clearLogBtn.addEventListener('click', () => {
+                    terminal.innerHTML = '<div class="text-outline-variant font-mono">[LOGS LIMPOS PELO OPERADOR]</div>';
+                    showToast('Console de logs esvaziado.');
+                });
+
+                // Manual Snapshot force
+                const manualSyncBtn = document.getElementById('manual-sync-btn');
+                manualSyncBtn.addEventListener('click', () => {
+                    manualSyncBtn.disabled = true;
+                    manualSyncBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span> Sincronizando...';
+                    setTimeout(() => {
+                        manualSyncBtn.disabled = false;
+                        manualSyncBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">sync</span> Forçar Snapshot';
+                        const now = new Date();
+                        document.getElementById('sync-timestamp').textContent = 'Hoje, ' + now.toTimeString().split(' ')[0] + ' (agora)';
+                        addLog('SISTEMA', 'Snapshot manual de integridade de dados efetuado com sucesso.');
+                        showToast('Snapshot RNDS sincronizado!');
+                    }, 700);
+                });
+
+            })();
+        </script>
+    </main>
+    <footer
+        class="w-full bg-surface-container-low text-on-surface-variant mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1440px] mx-auto px-margin py-space-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="space-y-space-sm">
+                <div class="flex items-center gap-space-xs"><img alt="HemoVida Logo" class="h-7 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWhlx6HAjnx7CEdmrE-KhTmucOgPMXYV2JlBLy69OURXl6Weh4DVhGnZkO2nR8-f1BXQsyH5MtvdrRzZQ86zo8VR7tNQxAejLLh8DlyXRYIa0LHS4OjCtaZng3dZJMk70OOVVdCdKQMGZxVKtMx2-Ous2sCfRjz6gq1GRQgx_ezAmiymPXifs3RzWCZPyNkYYAkh6ITG6fQmSGOt95OtnFRXl-UZSTbKe2VzyN5-S" /><span
+                        class="font-headline-sm text-headline-sm text-primary font-bold">HemoVida</span></div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Rede inteligente de suporte à doação de
+                    sangue e gestão integrada de hemocentros clínicos, orientada pelo ODS 3 da ONU (Saúde e Bem-Estar -
+                    Metas 3.8 e 3.d).</p>
+                <div class="flex items-center gap-space-xs pt-space-xs"><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">ODS
+                        3 • Saúde</span><span
+                        class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">SUS
+                        Integrado</span></div>
+            </div>
+            <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Links Rápidos & Diretrizes</h4>
+                <ul class="space-y-space-xs font-body-sm text-body-sm">
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="posso-doar" href="#">Critérios de
+                            Doação de Sangue</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="guia-e-compatibilidade"
+                            href="#">Dúvidas Frequentes & Compatibilidade</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="hemocentros" href="#">Hospitais &
+                            Hemocentros Parceiros</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" data-path="admin-simulador" href="#">API
+                            Hemocentros & Integração RNDS</a></li>
+                    <li class="flex items-center gap-1"><span
+                            class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><a
+                            class="hover:text-primary transition-colors" href="#">Privacidade de Dados & LGPD em
+                            Saúde</a></li>
+                </ul>
+            </div>
+            <div class="space-y-space-sm">
+                <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Canais de Emergência & Apoio</h4>
+                <div
+                    class="p-space-sm rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.03)] space-y-space-xs">
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Disque Doação SUS</span><span
+                            class="font-headline-sm text-headline-sm font-bold text-primary">136</span></div>
+                    <div class="flex items-center justify-between"><span
+                            class="font-label-sm text-label-sm text-on-surface-variant">Central 24h</span><span
+                            class="font-label-md text-label-md font-bold text-on-surface">0800 700 VIDA</span></div>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container text-on-surface">
+                    <div class="flex items-center gap-space-xs"><span
+                            class="material-symbols-outlined text-tertiary">verified</span><span
+                            class="font-label-sm text-label-sm font-bold">Hackathon Evaluation Edition</span></div>
+                    <p class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Plataforma validada para
+                        auditoria operacional de estoques vitais e resposta rápida.</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-margin py-space-sm border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-xs text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 HemoVida. Desenvolvido para salvar
+                vidas com tecnologia humanizada.</p>
+            <div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span
+                    class="flex items-center gap-1"><span
+                        class="material-symbols-outlined text-[14px] text-tertiary">health_and_safety</span>
+                    Conformidade ANVISA RDC 34/2014</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>
