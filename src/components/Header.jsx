@@ -11,7 +11,6 @@ export default function Header({ currentTab, setCurrentTab, onOpenAppointment, c
     { id: 'gamificacao', label: 'Conquistas & Ranking', icon: 'emoji_events' },
     { id: 'pedidos-urgentes', label: 'Pedidos Urgentes', icon: 'campaign' },
     { id: 'compatibilidade', label: 'Guia & Compatibilidade', icon: 'swap_horiz' },
-    { id: 'admin', label: 'Admin / Simulador', icon: 'tune' },
   ];
 
   return (
@@ -40,7 +39,18 @@ export default function Header({ currentTab, setCurrentTab, onOpenAppointment, c
           </div>
 
           {/* Right Action & User */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            {/* Dedicated Hemocenter Portal Access Switch */}
+            <button
+              onClick={() => setCurrentTab('admin')}
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-semibold text-xs transition-all shadow-sm group active:scale-95"
+              title="Acessar Área Restrita: Painel do Hemocentro / Simulador Operacional"
+            >
+              <span className="material-symbols-outlined text-[16px] text-slate-500 group-hover:text-primary transition-colors">tune</span>
+              <span className="hidden md:inline">Painel do Hemocentro</span>
+              <span className="md:hidden">Gestão</span>
+            </button>
+
             {/* SOS Badge */}
             <div 
               onClick={() => setCurrentTab('estoque')}
@@ -58,7 +68,7 @@ export default function Header({ currentTab, setCurrentTab, onOpenAppointment, c
             {/* Quick Schedule Button */}
             <button
               onClick={() => onOpenAppointment()}
-              className="px-4 py-2 rounded-xl bg-primary hover:bg-primary-dark text-white font-semibold text-sm transition-all flex items-center gap-1.5 shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/35 active:scale-95"
+              className="px-3.5 sm:px-4 py-2 rounded-xl bg-primary hover:bg-primary-dark text-white font-semibold text-xs sm:text-sm transition-all flex items-center gap-1.5 shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/35 active:scale-95"
             >
               <span className="material-symbols-outlined text-[18px]">event</span>
               <span className="hidden sm:inline">+ Agendar Agora</span>

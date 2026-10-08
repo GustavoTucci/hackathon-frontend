@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AdminHeader from './components/AdminHeader';
 import AppointmentModal from './components/AppointmentModal';
 import Toast from './components/Toast';
 import Home from './pages/Home';
@@ -143,89 +144,103 @@ export default function App() {
   };
 
   const criticalTypes = stocks.filter(s => s.status === 'critical').map(s => s.type);
+  const isAdminMode = currentTab === 'admin';
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface font-sans text-on-surface antialiased">
-      {/* Persistent Global Header */}
-      <Header
-        currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
-        onOpenAppointment={handleOpenAppointment}
-        criticalTypes={criticalTypes}
-      />
+    <div className={`min-h-screen flex flex-col font-sans antialiased ${isAdminMode ? 'bg-slate-950 text-slate-100' : 'bg-surface text-on-surface'}`}>
+      {/* Dynamic Header: Dedicated Admin Header vs Regular Public Donor Header */}
+      {isAdminMode ? (
+        <AdminHeader
+          onExitAdmin={() => setCurrentTab('home')}
+          onResetBaseline={handleResetBaseline}
+        />
+      ) : (
+        <Header
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+          onOpenAppointment={handleOpenAppointment}
+          criticalTypes={criticalTypes}
+        />
+      )}
 
       {/* Main Page Area with Dynamic SPA Rendering */}
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-8 pt-32 md:pt-36 pb-12">
-        {currentTab === 'home' && (
-          <Home
-            onNavigate={setCurrentTab}
-            onOpenAppointment={handleOpenAppointment}
-            stocks={stocks}
-          />
+      <main className={`flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-8 pb-12 ${isAdminMode ? 'pt-36 md:pt-32' : 'pt-32 md:pt-36'}`}>
+        {/* PUBLIC DONOR VIEWS */}
+        {!isAdminMode && (
+          <>
+            {currentTab === 'home' && (
+              <Home
+                onNavigate={setCurrentTab}
+                onOpenAppointment={handleOpenAppointment}
+                stocks={stocks}
+              />
+            )}
+
+            {currentTab === 'estoque' && (
+              <BloodStock
+                stocks={stocks}
+                onOpenAppointment={handleOpenAppointment}
+                onUpdateStock={handleUpdateStockSimulation}
+              />
+            )}
+
+            {currentTab === 'quiz' && (
+              <QuizEligibility
+                onNavigate={setCurrentTab}
+                onOpenAppointment={handleOpenAppointment}
+              />
+            )}
+
+            {currentTab === 'hemocentros' && (
+              <HemocentrosList
+                hemocentros={hemocentros}
+                onOpenAppointment={handleOpenAppointment}
+              />
+            )}
+
+            {currentTab === 'agendamento' && (
+              <ScheduleDonation
+                onNavigate={setCurrentTab}
+                showToast={handleShowToast}
+              />
+            )}
+
+            {currentTab === 'carteirinha' && (
+              <DigitalCard
+                onNavigate={setCurrentTab}
+                showToast={handleShowToast}
+              />
+            )}
+
+            {currentTab === 'gamificacao' && (
+              <Gamification
+                onNavigate={setCurrentTab}
+                showToast={handleShowToast}
+              />
+            )}
+
+            {currentTab === 'pedidos-urgentes' && (
+              <UrgentAppeals
+                appeals={appeals}
+                onSaveAppeal={handleAddAppeal}
+                onNavigate={setCurrentTab}
+                onOpenAppointment={handleOpenAppointment}
+                showToast={handleShowToast}
+              />
+            )}
+
+            {currentTab === 'compatibilidade' && (
+              <CompatibilityGuide
+                onNavigate={setCurrentTab}
+                onOpenAppointment={handleOpenAppointment}
+                showToast={handleShowToast}
+              />
+            )}
+          </>
         )}
 
-        {currentTab === 'estoque' && (
-          <BloodStock
-            stocks={stocks}
-            onOpenAppointment={handleOpenAppointment}
-            onUpdateStock={handleUpdateStockSimulation}
-          />
-        )}
-
-        {currentTab === 'quiz' && (
-          <QuizEligibility
-            onNavigate={setCurrentTab}
-            onOpenAppointment={handleOpenAppointment}
-          />
-        )}
-
-        {currentTab === 'hemocentros' && (
-          <HemocentrosList
-            hemocentros={hemocentros}
-            onOpenAppointment={handleOpenAppointment}
-          />
-        )}
-
-        {currentTab === 'agendamento' && (
-          <ScheduleDonation
-            onNavigate={setCurrentTab}
-            showToast={handleShowToast}
-          />
-        )}
-
-        {currentTab === 'carteirinha' && (
-          <DigitalCard
-            onNavigate={setCurrentTab}
-            showToast={handleShowToast}
-          />
-        )}
-
-        {currentTab === 'gamificacao' && (
-          <Gamification
-            onNavigate={setCurrentTab}
-            showToast={handleShowToast}
-          />
-        )}
-
-        {currentTab === 'pedidos-urgentes' && (
-          <UrgentAppeals
-            appeals={appeals}
-            onSaveAppeal={handleAddAppeal}
-            onNavigate={setCurrentTab}
-            onOpenAppointment={handleOpenAppointment}
-            showToast={handleShowToast}
-          />
-        )}
-
-        {currentTab === 'compatibilidade' && (
-          <CompatibilityGuide
-            onNavigate={setCurrentTab}
-            onOpenAppointment={handleOpenAppointment}
-            showToast={handleShowToast}
-          />
-        )}
-
-        {currentTab === 'admin' && (
+        {/* DEDICATED ADMIN / HOSPITAL ENVIRONMENT (Reusing AdminHemocenter component) */}
+        {isAdminMode && (
           <AdminHemocenter
             stocks={stocks}
             onUpdateStock={handleAdminUpdateStock}
@@ -237,11 +252,34 @@ export default function App() {
         )}
       </main>
 
-      {/* Global Footer */}
-      <Footer
-        setCurrentTab={setCurrentTab}
-        onOpenAppointment={handleOpenAppointment}
-      />
+      {/* Dynamic Footer: Dedicated Admin Backoffice Footer vs Regular Public Donor Footer */}
+      {isAdminMode ? (
+        <footer className="w-full bg-slate-900 border-t border-slate-800 text-slate-400 py-6 text-xs">
+          <div className="max-w-[1440px] mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="font-semibold text-slate-300">
+                HemoVida Gestão • Sistema Hospitalar de Telemetria e Estoques RNDS / SUS
+              </span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-slate-500 hidden md:inline">Ambiente de Simulação e Crise</span>
+              <button
+                onClick={() => setCurrentTab('home')}
+                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-red-400 hover:text-red-300 font-bold border border-slate-700 transition-colors flex items-center gap-1.5"
+              >
+                <span className="material-symbols-outlined text-[16px]">arrow_back</span>
+                Retornar ao Portal do Doador
+              </button>
+            </div>
+          </div>
+        </footer>
+      ) : (
+        <Footer
+          setCurrentTab={setCurrentTab}
+          onOpenAppointment={handleOpenAppointment}
+        />
+      )}
 
       {/* Appointment Modal */}
       <AppointmentModal
