@@ -4,6 +4,18 @@
 
 ---
 
+## 📋 Definição do Problema (Entrega da Etapa 1)
+
+```text
+ODS escolhido: ODS 3 — Saúde e Bem-Estar (Metas 3.8, 3.d e 3.6)
+Problema: Escassez crônica e imprevisibilidade dos estoques de sangue nos hemocentros brasileiros (menos de 1,6% da população é doadora regular), desinformação sobre critérios de triagem e ausência de canais em tempo real para conscientização e agendamento.
+Público-alvo: Cidadãos aptos a doar (16 a 69 anos, foco em jovens de 18 a 35 anos), familiares de pacientes hospitalizados e instituições (hemocentros e bancos de sangue).
+Necessidade: Plataforma centralizada e transparente para monitorar estoques em tempo real, realizar pré-triagem médica instantânea ("Posso Doar?"), agendar coletas e acompanhar o histórico pessoal com lembretes dos intervalos legais de doação.
+Objetivo da solução: Desenvolver uma aplicação Front-end em React + Vite interativa, moderna e acessível que conecte doadores a postos de coleta, aumente a previsibilidade dos bancos de sangue, reduza o cancelamento de cirurgias e engaje a comunidade através de gamificação e alertas urgentes.
+```
+
+---
+
 ## 📌 ODS (Objetivo de Desenvolvimento Sustentável)
 
 * **ODS Selecionado:** **ODS 3 — Saúde e Bem-Estar**
@@ -255,15 +267,16 @@ A aplicação é composta por **10 visões/telas completas, ricas e navegáveis*
 
 ## 🌐 Aplicação
 
-* **URL da Aplicação (Deploy):** `[Será adicionado após o deploy na Vercel]`
-* **URL do Repositório GitHub:** `https://github.com/GustavoTucci/hackathon-frontend`
-* **URL do Protótipo / Demonstração:** `[Link da versão interativa no ar]`
+* **URL da Aplicação (Deploy):** https://hackathon-frontend-tucciz.vercel.app/
+* **URL do Repositório GitHub:** https://github.com/GustavoTucci/hackathon-frontend
+* **URL do Protótipo / Telas:** https://github.com/GustavoTucci/hackathon-frontend/tree/main/prototipo
 
 ---
 
 ## 📋 Processo de Desenvolvimento & Gestão do Projeto
 
-Para cumprir a exigência de **no mínimo 50 cards reais de atividades**, o projeto foi estruturado no fluxo ágil (Kanban):
+* **Ferramenta de Gerenciamento Utilizada:** **GitHub Projects** (Quadro Kanban com acompanhamento de backlog, in progress e done)
+* **Quantidade de Cards:** **50 cards de atividades reais** mapeados e executados durante o ciclo de 4 horas.
 
 ### 🗂️ Mapeamento dos 50 Cards de Atividades
 
@@ -376,10 +389,10 @@ Toda a concepção criativa, curadoria dos dados dos hemocentros, definição da
 
 ## 👥 Integrantes da Equipe
 
-1. **Integrante 1:** [Nome Completo / Função]
-2. **Integrante 2:** [Nome Completo / Função]
-3. **Integrante 3:** [Nome Completo / Função]
-4. **Integrante 4:** [Nome Completo / Função]
+1. **Integrante 1:** Gustavo Tucci
+2. **Integrante 2:** Matheus Boff
+3. **Integrante 3:** Vinicius Pereira
+4. **Integrante 4:** Ryan Amorim
 
 ---
 *Projeto desenvolvido para o Hackathon de Front-end — SENAI.*
