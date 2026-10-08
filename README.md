@@ -331,16 +331,46 @@ Para cumprir a exigência de **no mínimo 50 cards reais de atividades**, o proj
 
 ---
 
-## 🤖 Inteligência Artificial
+## 🤖 12. Inteligência Artificial
 
-* **Ferramenta Utilizada:** Google Gemini 3.8 Flash (via Antigravity IDE)
-* **Etapas em que foi utilizada:**
-  1. *Ideação e Alinhamento com a ODS:* Identificação de metas estratégicas da ODS 3 (Metas 3.8 e 3.d) aplicadas à captação de sangue e hemocentros.
-  2. *Engenharia de Requisitos:* Estruturação dos 10 requisitos funcionais e 10 não funcionais segundo padrões formais de software.
-  3. *Arquitetura de Componentes:* Estruturação de componentes React, regras de compatibilidade sanguínea e cálculo de intervalos no Front-end.
-  4. *Documentação Técnica:* Criação do README completo atendendo a todas as seções obrigatórias do edital.
-  5. *Revisão de Código:* Validação de boas práticas, acessibilidade e responsividade.
-* **Declaração de Responsabilidade:** Toda a concepção, seleção das regras de negócio, arquitetura da aplicação e validação final foram conduzidas e assumidas pela equipe.
+A utilização de ferramentas de Inteligência Artificial foi um dos pilares estratégicos da equipe para acelerar o ciclo de entrega, garantir alta fidelidade visual e estruturar uma arquitetura Front-end moderna em **React + Vite** com 10 telas completas no prazo do Hackathon.
+
+### 🛠️ Ferramentas Utilizadas
+
+1. **Google Stitch (IA para Prototipação & Design UI/UX):**
+   * Ferramenta de inteligência artificial generativa aplicada ao design de interfaces e prototipação rápida.
+   * Utilizada para idealizar, gerar e iterar os protótipos de alta fidelidade das 10 telas da aplicação (`tela01` a `tela10`), definindo a hierarquia visual, fluxos de navegação e componentes de tela.
+
+2. **Google Gemini 3.8 Flash & Antigravity IDE (IA para Engenharia de Software & Pair-Programming):**
+   * Agente inteligente de desenvolvimento utilizado como copiloto técnico durante a implementação do código, arquitetura de componentes, revisão de lógica e documentação técnica.
+
+---
+
+### ⏱️ Etapas em que foram Utilizadas
+
+| Etapa do Projeto | Ferramenta de IA | Atividades Realizadas |
+|---|---|---|
+| **1. Ideação & Prototipação UI/UX** | **Stitch** | Criação ágil dos protótipos de alta fidelidade das 10 telas; teste de layouts responsivos, cartões de apelo urgente, matriz 8×8 de compatibilidade e painel do hemocentro antes da escrita do código. |
+| **2. Engenharia de Requisitos & ODS** | **Gemini (Antigravity)** | Alinhamento do produto com as metas 3.8 e 3.d da ODS 3 (Saúde e Bem-Estar); estruturação formal dos 10 Requisitos Funcionais, 10 Não Funcionais e User Stories com critérios de aceitação. |
+| **3. Desenvolvimento Front-end (React + Vite)** | **Gemini (Antigravity)** | Conversão dos protótipos do Stitch em componentes modulares em **React 18** empacotados com **Vite**; implementação da lógica biológica de compatibilidade sanguínea (`bloodCalculator.js`), sistema de persistência com `localStorage` (`storage.js`) e roteamento SPA. |
+| **4. Estilização & Design System** | **Stitch + Gemini** | Extração do guia de estilos do Stitch para variáveis CSS globais (`index.css`), garantindo micro-animações, design humanizado com paleta médica e acessibilidade WCAG 2.1 AA. |
+| **5. Controle de Versão & Git** | **Gemini (Antigravity)** | Resolução de divergências entre branch local e remoto, organização de commits semânticos por tela e validação do build de produção (`npm run build`). |
+| **6. Documentação & Gestão Ágil** | **Gemini (Antigravity)** | Elaboração do README.md completo nas 12 seções obrigatórias e estruturação dos 50 cards de atividades no fluxo Kanban. |
+
+---
+
+### 🚀 Como Contribuíram para o Desenvolvimento
+
+* **Redução Drástica do Time-to-Market:** A prototipação ágil com o **Stitch** permitiu validar rapidamente a usabilidade das telas e a disposição dos componentes antes da implementação, eliminando retrabalho no desenvolvimento.
+* **Aceleração da Codificação em React e Vite:** A transição do protótipo Stitch para código React funcional foi acelerada pela assistência de IA, que auxiliou na criação de componentes reutilizáveis e tipados, hooks customizados e gerenciamento de estado limpo no Vite sem sobrecarga de bibliotecas externas.
+* **Precisão nas Regras de Negócio Médicas:** A IA auxiliou na modelagem fidedigna dos intervalos legais de doação de sangue do Ministério da Saúde (60 dias / 4x ao ano para homens; 90 dias / 3x ao ano para mulheres) e da matriz cruzada de compatibilidade para os 8 tipos sanguíneos.
+* **Qualidade de Código e Resolução de Problemas:** Auxílio em refatorações, estruturação de estilos CSS coesos e resolução ágil de conflitos de versionamento no Git, garantindo que o bundle final compilasse sem qualquer erro.
+
+---
+
+### ⚖️ Declaração de Responsabilidade e Ética
+
+Toda a concepção criativa, curadoria dos dados dos hemocentros, definição das diretrizes de negócio, validação dos fluxos de triagem e revisão minuciosa de cada linha de código gerada foram **estritamente conduzidas, avaliadas e assumidas pelos integrantes humanos da equipe**. As ferramentas de inteligência artificial atuaram como instrumentos de ampliação da produtividade técnica e criativa, mantendo a autoria e responsabilidade final integralmente sob controle da equipe.
 
 ---
 
