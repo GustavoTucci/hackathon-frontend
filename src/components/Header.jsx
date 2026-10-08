@@ -6,6 +6,9 @@ export default function Header({ currentTab, setCurrentTab, onOpenAppointment, c
     { id: 'estoque', label: 'Estoque em Tempo Real', icon: 'bloodtype' },
     { id: 'quiz', label: 'Posso Doar? (Triagem)', icon: 'fact_check' },
     { id: 'hemocentros', label: 'Hemocentros', icon: 'local_hospital' },
+    { id: 'agendamento', label: 'Agendar Doação', icon: 'calendar_month' },
+    { id: 'carteirinha', label: 'Carteirinha Digital', icon: 'badge' },
+    { id: 'gamificacao', label: 'Conquistas & Ranking', icon: 'emoji_events' },
   ];
 
   return (
@@ -60,7 +63,11 @@ export default function Header({ currentTab, setCurrentTab, onOpenAppointment, c
             </button>
 
             {/* User Profile Pill */}
-            <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
+            <div 
+              onClick={() => setCurrentTab('carteirinha')}
+              className="flex items-center gap-2 pl-2 border-l border-slate-200 cursor-pointer hover:opacity-80 transition-opacity"
+              title="Ver Carteirinha Digital"
+            >
               <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs ring-2 ring-primary/20">
                 GT
               </div>

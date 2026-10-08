@@ -65,11 +65,29 @@ export default function Footer({ setCurrentTab, onOpenAppointment }) {
             </li>
             <li>
               <button 
-                onClick={() => onOpenAppointment()}
+                onClick={() => setCurrentTab('agendamento')}
                 className="hover:text-red-400 transition-colors flex items-center gap-1.5 text-slate-300 font-semibold"
               >
                 <span className="material-symbols-outlined text-[14px]">chevron_right</span>
-                Agendar Doação Voluntária
+                Agendamento de Doação (Tela 05)
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setCurrentTab('carteirinha')}
+                className="hover:text-red-400 transition-colors flex items-center gap-1.5 text-slate-300 font-semibold"
+              >
+                <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+                Carteirinha Digital do Doador (Tela 06)
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setCurrentTab('gamificacao')}
+                className="hover:text-red-400 transition-colors flex items-center gap-1.5 text-slate-300 font-semibold"
+              >
+                <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+                Gamificação & Medalhas (Tela 07)
               </button>
             </li>
           </ul>

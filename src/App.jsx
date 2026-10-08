@@ -7,6 +7,9 @@ import Home from './pages/Home';
 import BloodStock from './pages/BloodStock';
 import QuizEligibility from './pages/QuizEligibility';
 import HemocentrosList from './pages/HemocentrosList';
+import ScheduleDonation from './pages/ScheduleDonation';
+import DigitalCard from './pages/DigitalCard';
+import Gamification from './pages/Gamification';
 import { getStocks, saveStocks, getHemocentros } from './utils/storage';
 
 export default function App() {
@@ -33,6 +36,18 @@ export default function App() {
       title: 'Doação Agendada!',
       message
     });
+  };
+
+  const handleShowToast = (data) => {
+    if (typeof data === 'string') {
+      setToast({
+        type: 'success',
+        title: 'HemoVida',
+        message: data
+      });
+    } else if (data && typeof data === 'object') {
+      setToast(data);
+    }
   };
 
   // Simulation of stock variations in real time
@@ -114,6 +129,27 @@ export default function App() {
           <HemocentrosList
             hemocentros={hemocentros}
             onOpenAppointment={handleOpenAppointment}
+          />
+        )}
+
+        {currentTab === 'agendamento' && (
+          <ScheduleDonation
+            onNavigate={setCurrentTab}
+            showToast={handleShowToast}
+          />
+        )}
+
+        {currentTab === 'carteirinha' && (
+          <DigitalCard
+            onNavigate={setCurrentTab}
+            showToast={handleShowToast}
+          />
+        )}
+
+        {currentTab === 'gamificacao' && (
+          <Gamification
+            onNavigate={setCurrentTab}
+            showToast={handleShowToast}
           />
         )}
       </main>
