@@ -22,6 +22,9 @@
   --status-normal: #16A34A;
   --status-normal-bg: #F0FDF4;
   --status-normal-border: #86EFAC;
+  --status-safe: #16A34A;
+  --status-safe-bg: #F0FDF4;
+  --status-safe-border: #86EFAC;
   
   --bg-main: #FAF8FF;
   --bg-card: #FFFFFF;
@@ -204,6 +207,24 @@
   background-color: #E0F2FE;
   color: #0369A1;
   border: 1px solid #BAE6FD;
+}
+
+.badge-safe {
+  background-color: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #6EE7B7;
+}
+
+.badge-critical {
+  background-color: #FEF2F2;
+  color: #991B1B;
+  border: 1px solid #FCA5A5;
+}
+
+.badge-warning {
+  background-color: #FFFBEB;
+  color: #92400E;
+  border: 1px solid #FCD34D;
 }
 
 .card {

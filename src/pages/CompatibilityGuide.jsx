@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BLOOD_COMPATIBILITY, ALL_BLOOD_TYPES } from '../utils/bloodCalculator';
-import { ArrowUpRight, ArrowDownRight, Check, X, ChevronDown, Sparkles, AlertCircle, Info, Calendar } from 'lucide-react';
+import { ArrowUpRight, ArrowDownRight, Check, X, ChevronDown, Sparkles, AlertCircle, Info, Calendar, Heart } from 'lucide-react';
 
 const TYPE_DETAILS = {
   'O-': {
