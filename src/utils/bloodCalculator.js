@@ -9,6 +9,8 @@ export const BLOOD_COMPATIBILITY = {
   "AB+": { donateTo: ["AB+"], receiveFrom: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] }
 };
 
+export const ALL_BLOOD_TYPES = ["O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+"];
+
 /**
  * Calcula a próxima data permitida e dias restantes
  * @param {string|Date} lastDate - Data da última doação (ex: "2026-02-14")

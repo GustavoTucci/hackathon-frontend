@@ -10,11 +10,17 @@ import HemocentrosList from './pages/HemocentrosList';
 import ScheduleDonation from './pages/ScheduleDonation';
 import DigitalCard from './pages/DigitalCard';
 import Gamification from './pages/Gamification';
-import { getStocks, saveStocks, getHemocentros } from './utils/storage';
+import UrgentAppeals from './pages/UrgentAppeals';
+import CompatibilityGuide from './pages/CompatibilityGuide';
+import AdminHemocenter from './pages/AdminHemocenter';
+import { getStocks, saveStocks, getHemocentros, getAppeals, saveAppeals, resetAllData } from './utils/storage';
+import { INITIAL_BLOOD_STOCKS } from './data/initialStock';
+import { INITIAL_APPEALS } from './data/urgentAppeals';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState('home');
   const [stocks, setStocks] = useState(getStocks);
+  const [appeals, setAppeals] = useState(getAppeals);
   const [hemocentros] = useState(getHemocentros);
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
   const [appointmentDefaults, setAppointmentDefaults] = useState({});
@@ -24,6 +30,11 @@ export default function App() {
   useEffect(() => {
     saveStocks(stocks);
   }, [stocks]);
+
+  // Update appeals in storage whenever they change
+  useEffect(() => {
+    saveAppeals(appeals);
+  }, [appeals]);
 
   const handleOpenAppointment = (defaults = {}) => {
     setAppointmentDefaults(defaults);
@@ -48,6 +59,49 @@ export default function App() {
     } else if (data && typeof data === 'object') {
       setToast(data);
     }
+  };
+
+  const handleAdminUpdateStock = (bloodType, newPercentage) => {
+    setStocks(prev => {
+      const updated = prev.map(item => {
+        if (item.type === bloodType) {
+          let newStatus = 'safe';
+          let newStatusLabel = 'Adequado';
+          if (newPercentage < 30) {
+            newStatus = 'critical';
+            newStatusLabel = 'Crítico';
+          } else if (newPercentage < 60) {
+            newStatus = 'warning';
+            newStatusLabel = 'Alerta';
+          }
+          return {
+            ...item,
+            percentage: newPercentage,
+            status: newStatus,
+            statusLabel: newStatusLabel,
+            bagsAvailable: Math.round(newPercentage * 2.1),
+            lastUpdated: 'Ajustado via Painel Admin'
+          };
+        }
+        return item;
+      });
+      return updated;
+    });
+  };
+
+  const handleResetBaseline = () => {
+    resetAllData();
+    setStocks(INITIAL_BLOOD_STOCKS);
+    setAppeals(INITIAL_APPEALS);
+    setToast({
+      type: 'success',
+      title: 'Baseline Restaurado!',
+      message: 'Estoques e dados do pitch foram redefinidos para os padrões da ANVISA/SUS.'
+    });
+  };
+
+  const handleAddAppeal = (newAppeal) => {
+    setAppeals(prev => [newAppeal, ...prev]);
   };
 
   // Simulation of stock variations in real time
@@ -148,6 +202,35 @@ export default function App() {
 
         {currentTab === 'gamificacao' && (
           <Gamification
+            onNavigate={setCurrentTab}
+            showToast={handleShowToast}
+          />
+        )}
+
+        {currentTab === 'pedidos-urgentes' && (
+          <UrgentAppeals
+            appeals={appeals}
+            onSaveAppeal={handleAddAppeal}
+            onNavigate={setCurrentTab}
+            onOpenAppointment={handleOpenAppointment}
+            showToast={handleShowToast}
+          />
+        )}
+
+        {currentTab === 'compatibilidade' && (
+          <CompatibilityGuide
+            onNavigate={setCurrentTab}
+            onOpenAppointment={handleOpenAppointment}
+            showToast={handleShowToast}
+          />
+        )}
+
+        {currentTab === 'admin' && (
+          <AdminHemocenter
+            stocks={stocks}
+            onUpdateStock={handleAdminUpdateStock}
+            onResetBaseline={handleResetBaseline}
+            onAddAppeal={handleAddAppeal}
             onNavigate={setCurrentTab}
             showToast={handleShowToast}
           />

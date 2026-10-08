@@ -1,6 +1,7 @@
 import { INITIAL_BLOOD_STOCKS } from '../data/initialStock';
 import { INITIAL_HEMOCENTROS } from '../data/hemocentros';
 import { INITIAL_BADGES } from '../data/badges';
+import { INITIAL_APPEALS } from '../data/urgentAppeals';
 
 const STORAGE_KEYS = {
   STOCKS: 'hemovida_stocks',
@@ -8,7 +9,8 @@ const STORAGE_KEYS = {
   APPOINTMENTS: 'hemovida_appointments',
   HEMOCENTROS: 'hemovida_hemocentros',
   BADGES: 'hemovida_badges',
-  HISTORY: 'hemovida_history'
+  HISTORY: 'hemovida_history',
+  APPEALS: 'hemovida_appeals'
 };
 
 const DEFAULT_DONOR = {
@@ -191,6 +193,40 @@ export const addHistory = (item) => {
   return updated;
 };
 
+export const getAppeals = () => {
+  try {
+    const data = localStorage.getItem(STORAGE_KEYS.APPEALS);
+    return data ? JSON.parse(data) : INITIAL_APPEALS;
+  } catch {
+    return INITIAL_APPEALS;
+  }
+};
+
+export const saveAppeals = (appeals) => {
+  try {
+    localStorage.setItem(STORAGE_KEYS.APPEALS, JSON.stringify(appeals));
+    window.dispatchEvent(new CustomEvent('hemovida_appeals_updated', { detail: appeals }));
+  } catch (e) {
+    console.error('Erro ao salvar apelos de sangue', e);
+  }
+};
+
+export const addAppeal = (appeal) => {
+  const current = getAppeals();
+  const updated = [appeal, ...current];
+  saveAppeals(updated);
+  return updated;
+};
+
+export const resetAllData = () => {
+  saveStocks(INITIAL_BLOOD_STOCKS);
+  saveDonorProfile(DEFAULT_DONOR);
+  saveBadges(INITIAL_BADGES);
+  saveAppeals(INITIAL_APPEALS);
+  localStorage.setItem(STORAGE_KEYS.HISTORY, JSON.stringify(DEFAULT_HISTORY));
+  window.dispatchEvent(new CustomEvent('hemovida_reset_all'));
+};
+
 // Unified Storage helper object for full interoperability across all screens
 export const Storage = {
   getStocks,
@@ -206,5 +242,9 @@ export const Storage = {
   getBadges,
   saveBadges,
   getHistory,
-  addHistory
+  addHistory,
+  getAppeals,
+  saveAppeals,
+  addAppeal,
+  resetAllData
 };

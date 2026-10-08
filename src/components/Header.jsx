@@ -9,6 +9,9 @@ export default function Header({ currentTab, setCurrentTab, onOpenAppointment, c
     { id: 'agendamento', label: 'Agendar Doação', icon: 'calendar_month' },
     { id: 'carteirinha', label: 'Carteirinha Digital', icon: 'badge' },
     { id: 'gamificacao', label: 'Conquistas & Ranking', icon: 'emoji_events' },
+    { id: 'pedidos-urgentes', label: 'Pedidos Urgentes', icon: 'campaign' },
+    { id: 'compatibilidade', label: 'Guia & Compatibilidade', icon: 'swap_horiz' },
+    { id: 'admin', label: 'Admin / Simulador', icon: 'tune' },
   ];
 
   return (

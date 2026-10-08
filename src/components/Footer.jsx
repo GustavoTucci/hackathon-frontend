@@ -90,6 +90,33 @@ export default function Footer({ setCurrentTab, onOpenAppointment }) {
                 Gamificação & Medalhas (Tela 07)
               </button>
             </li>
+            <li>
+              <button 
+                onClick={() => setCurrentTab('pedidos-urgentes')}
+                className="hover:text-red-400 transition-colors flex items-center gap-1.5 text-slate-300 font-semibold"
+              >
+                <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+                Pedidos Urgentes & SOS (Tela 08)
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setCurrentTab('compatibilidade')}
+                className="hover:text-red-400 transition-colors flex items-center gap-1.5 text-slate-300 font-semibold"
+              >
+                <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+                Guia & Compatibilidade 8x8 (Tela 09)
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => setCurrentTab('admin')}
+                className="hover:text-red-400 transition-colors flex items-center gap-1.5 text-slate-300 font-semibold"
+              >
+                <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+                Painel do Hemocentro / Simulador (Tela 10)
+              </button>
+            </li>
           </ul>
         </div>
 
