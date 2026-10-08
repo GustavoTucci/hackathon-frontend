@@ -388,11 +388,10 @@ Toda a concepção criativa, curadoria dos dados dos hemocentros, definição da
 ---
 
 ## 👥 Integrantes da Equipe
-
-1. **Integrante 1:** Gustavo Tucci
-2. **Integrante 2:** Matheus Boff
-3. **Integrante 3:** Vinicius Pereira
-4. **Integrante 4:** Ryan Amorim
+**Integrante 1:** Gustavo Tucci
+**Integrante 2:** Matheus Boff
+**Integrante 3:** Vinicius Pereira
+**Integrante 4:** Ryan Amorim
 
 ---
 *Projeto desenvolvido para o Hackathon de Front-end — SENAI.*
