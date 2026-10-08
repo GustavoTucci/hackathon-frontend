@@ -147,7 +147,7 @@ export default function App() {
   const isAdminMode = currentTab === 'admin';
 
   return (
-    <div className={`min-h-screen flex flex-col font-sans antialiased ${isAdminMode ? 'bg-slate-950 text-slate-100' : 'bg-surface text-on-surface'}`}>
+    <div className="min-h-screen flex flex-col bg-surface font-sans text-on-surface antialiased">
       {/* Dynamic Header: Dedicated Admin Header vs Regular Public Donor Header */}
       {isAdminMode ? (
         <AdminHeader
@@ -164,7 +164,7 @@ export default function App() {
       )}
 
       {/* Main Page Area with Dynamic SPA Rendering */}
-      <main className={`flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-8 pb-12 ${isAdminMode ? 'pt-36 md:pt-32' : 'pt-32 md:pt-36'}`}>
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-8 pt-32 md:pt-36 pb-12">
         {/* PUBLIC DONOR VIEWS */}
         {!isAdminMode && (
           <>
@@ -254,19 +254,19 @@ export default function App() {
 
       {/* Dynamic Footer: Dedicated Admin Backoffice Footer vs Regular Public Donor Footer */}
       {isAdminMode ? (
-        <footer className="w-full bg-slate-900 border-t border-slate-800 text-slate-400 py-6 text-xs">
+        <footer className="w-full bg-white border-t border-slate-200 text-slate-600 py-6 text-xs shadow-sm">
           <div className="max-w-[1440px] mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="font-semibold text-slate-300">
+              <span className="font-semibold text-slate-800">
                 HemoVida Gestão • Sistema Hospitalar de Telemetria e Estoques RNDS / SUS
               </span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-slate-500 hidden md:inline">Ambiente de Simulação e Crise</span>
+              <span className="text-slate-400 hidden md:inline">Ambiente de Simulação e Crise</span>
               <button
                 onClick={() => setCurrentTab('home')}
-                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-red-400 hover:text-red-300 font-bold border border-slate-700 transition-colors flex items-center gap-1.5"
+                className="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-primary font-bold border border-red-200 transition-colors flex items-center gap-1.5"
               >
                 <span className="material-symbols-outlined text-[16px]">arrow_back</span>
                 Retornar ao Portal do Doador
