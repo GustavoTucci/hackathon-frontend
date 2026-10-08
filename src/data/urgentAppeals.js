@@ -1,0 +1,62 @@
+export const INITIAL_APPEALS = [
+  {
+    id: "app-01",
+    patientName: "Lucas Mendes da Silva",
+    age: 28,
+    condition: "Cirurgia cardíaca de emergência (troca valvar aórtica). Necessita de concentrado de hemácias.",
+    hospital: "Hospital das Clínicas (ICHC) • São Paulo",
+    bloodTypeNeeded: "O-",
+    bagsTarget: 8,
+    bagsCollected: 3,
+    urgencyLevel: "Máxima",
+    windowHours: 24,
+    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+    crm: "CRM/SP 184.920 - Dr. Roberto Alcântara",
+    createdAt: "2026-10-06"
+  },
+  {
+    id: "app-02",
+    patientName: "Beatriz Vasconcelos",
+    age: 11,
+    condition: "Tratamento quimioterápico intensivo para Leucemia Linfoide Aguda. Necessidade de suporte transfusional.",
+    hospital: "ITACI • Instituto de Tratamento do Câncer Infantil",
+    bloodTypeNeeded: "A-",
+    bagsTarget: 6,
+    bagsCollected: 4,
+    urgencyLevel: "Alta",
+    windowHours: 48,
+    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
+    crm: "CRM/SP 201.340 - Dra. Cecília Moraes",
+    createdAt: "2026-10-07"
+  },
+  {
+    id: "app-03",
+    patientName: "Mariana Silveira",
+    age: 34,
+    condition: "Complicação obstétrica pós-parto com choque hipovolêmico grave. Prova cruzada imediata necessária.",
+    hospital: "Maternidade Pro Matre Paulista",
+    bloodTypeNeeded: "B-",
+    bagsTarget: 5,
+    bagsCollected: 1,
+    urgencyLevel: "Máxima",
+    windowHours: 12,
+    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200",
+    crm: "CRM/SP 167.432 - Dr. Flávio Rezende",
+    createdAt: "2026-10-07"
+  },
+  {
+    id: "app-04",
+    patientName: "Carlos Eduardo Nogueira",
+    age: 45,
+    condition: "Transplante de medula óssea agendado. Requer concentrado de plaquetas por aférese.",
+    hospital: "Hospital São Paulo (UNIFESP)",
+    bloodTypeNeeded: "O+",
+    bagsTarget: 10,
+    bagsCollected: 7,
+    urgencyLevel: "Alta",
+    windowHours: 72,
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+    crm: "CRM/SP 199.810 - Dra. Renata Faria",
+    createdAt: "2026-10-05"
+  }
+];
